@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İDM Mühendislik | Endüstriyel Çözümler</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-sm shadow-sm p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-blue-900 tracking-tight">İDM MÜHENDİSLİK</h1>
+            <div class="hidden md:flex space-x-6 font-medium">
+                <a href="#anasayfa" class="hover:text-blue-600 transition">Anasayfa</a>
+                <a href="#hizmetler" class="hover:text-blue-600 transition">Hizmetler</a>
+                <a href="#teknoloji" class="hover:text-blue-600 transition">Teknoloji</a>
+                <a href="#iletisim" class="hover:text-blue-600 transition">İletişim</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="anasayfa" class="hero-bg h-screen flex items-center justify-center text-white">
+        <div class="text-center" data-aos="fade-down" data-aos-duration="1500">
+            <h2 class="text-5xl md:text-7xl font-extrabold mb-4">Hassas Mühendislik</h2>
+            <p class="text-xl md:text-2xl font-light tracking-widest uppercase">Yedek Parça İmalatı & Tersine Mühendislik</p>
+            <div class="mt-8">
+                <a href="#hizmetler" class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-full transition duration-300 font-bold">Çözümlerimizi Keşfedin</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="hizmetler" class="py-20 container mx-auto px-4">
+        <h3 class="text-3xl font-bold text-center mb-16 text-gray-800" data-aos="fade-up">Uzmanlık Alanlarımız</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600" data-aos="flip-left" data-aos-delay="100">
+                <h4 class="text-xl font-bold mb-4">Shredder Yedek Parça</h4>
+                <p class="text-gray-600">Untha, Komptech ve Lindner uyumlu yüksek dayanımlı yedek parça imalatı.</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600" data-aos="flip-left" data-aos-delay="300">
+                <h4 class="text-xl font-bold mb-4">3D Tarama & Tasarım</h4>
+                <p class="text-gray-600">CR-Scan Raptor ile 0.02mm hassasiyette tarama ve SolidWorks ile modelleme.</p>
+            </div>
+            <div class="bg-white p-8 rounded-xl shadow-lg border-t-4 border-blue-600" data-aos="flip-left" data-aos-delay="500">
+                <h4 class="text-xl font-bold mb-4">Tersine Mühendislik</h4>
+                <p class="text-gray-600">Eski veya çizimi olmayan parçaların dijital ortama aktarılması ve iyileştirilmesi.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="teknoloji" class="bg-gray-900 py-20 text-white">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0" data-aos="fade-right">
+                <h3 class="text-4xl font-bold mb-6 italic">Geleceği Tasarlıyoruz</h3>
+                <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                    En modern 3D tarama teknolojilerini kullanarak, karmaşık parçaları dijital dünyaya taşıyoruz. 
+                    Üretim süreçlerimizde hata payını sıfıra indiriyoruz.
+                </p>
+            </div>
+            <div class="md:w-1/2" data-aos="zoom-in-up">
+                <div class="bg-blue-600 h-64 w-full rounded-lg flex items-center justify-center italic text-2xl border-4 border-dashed border-white/20">
+                    [Buraya Bir 3D Model Resmi Gelecek]
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="iletisim" class="py-20 container mx-auto px-4 text-center">
+        <div data-aos="zoom-in">
+            <h3 class="text-3xl font-bold mb-8">Bize Ulaşın</h3>
+            <p class="text-gray-600 mb-4 text-xl">Afyon / Türkiye</p>
+            <a href="mailto:info@idmmuhendislik.com" class="text-blue-600 text-2xl font-bold underline">info@idmmuhendislik.com</a>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+</body>
+</html>
