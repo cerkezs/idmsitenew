@@ -10,15 +10,21 @@
     <style>
         .navy-blue { color: #081234; }
         .bg-navy { background-color: #081234; }
-        /* İkonun üzerine gelince parlaması için */
-        .wp-click-icon {
-            opacity: 0.3;
+        
+        /* Sağ Üst Köşedeki Havada Asılı İkon Efekti */
+        .wp-floating-icon {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            opacity: 0.15; /* Normalde çok soluk */
             transition: all 0.4s ease;
+            transform: rotate(-15deg); 
         }
-        .block:hover .wp-click-icon {
-            opacity: 1;
-            transform: scale(1.3);
-            color: #25D366;
+        
+        .block:hover .wp-floating-icon {
+            opacity: 1; /* Üzerine gelince tam parlar */
+            transform: scale(1.3) rotate(0deg); 
+            color: #25D366; /* WhatsApp Yeşili */
         }
     </style>
 </head>
@@ -52,34 +58,36 @@
     <section class="pb-16 container mx-auto px-6">
         <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             
-            <a href="https://wa.me/905388876040" target="_blank" class="bg-white p-10 rounded-2xl shadow-xl border-l-8 border-navy-blue flex flex-col items-center text-center transition hover:scale-[1.02] hover:shadow-2xl block relative" data-aos="fade-right">
-                <i class="fa-brands fa-whatsapp wp-click-icon text-4xl mb-6"></i>
+            <a href="https://wa.me/905388876040" target="_blank" class="bg-white p-10 rounded-2xl shadow-xl border-l-8 border-navy-blue flex flex-col justify-center transition hover:scale-[1.02] hover:shadow-2xl block relative overflow-hidden" data-aos="fade-right">
+                <i class="fa-brands fa-whatsapp wp-floating-icon text-5xl"></i>
+                
                 <h3 class="text-2xl font-black navy-blue uppercase mb-1">Erdoğan ÖZTÜRK</h3>
                 <p class="text-blue-600 font-bold text-[10px] uppercase tracking-widest mb-8 italic">General Manager</p>
                 <div class="space-y-4">
-                    <div class="flex items-center space-x-4 justify-center">
+                    <div class="flex items-center space-x-4">
                         <i class="fa-solid fa-phone text-blue-700 text-xs"></i>
-                        <span class="font-bold text-slate-700 text-sm">+90 538 887 60 40</span>
+                        <span class="font-bold text-slate-700 text-sm tracking-wide">+90 538 887 60 40</span>
                     </div>
-                    <div class="flex items-center space-x-4 justify-center">
+                    <div class="flex items-center space-x-4">
                         <i class="fa-solid fa-envelope text-blue-700 text-xs"></i>
-                        <span class="font-bold text-slate-700 text-sm lowercase text-center">erdogan@idmmuhendislik.com</span>
+                        <span class="font-bold text-slate-700 text-sm lowercase">erdogan@idmmuhendislik.com</span>
                     </div>
                 </div>
             </a>
 
-            <a href="https://wa.me/905551059195" target="_blank" class="bg-white p-10 rounded-2xl shadow-xl border-l-8 border-blue-700 flex flex-col items-center text-center transition hover:scale-[1.02] hover:shadow-2xl block relative" data-aos="fade-left">
-                <i class="fa-brands fa-whatsapp wp-click-icon text-4xl mb-6"></i>
+            <a href="https://wa.me/905551059195" target="_blank" class="bg-white p-10 rounded-2xl shadow-xl border-l-8 border-blue-700 flex flex-col justify-center transition hover:scale-[1.02] hover:shadow-2xl block relative overflow-hidden" data-aos="fade-left">
+                <i class="fa-brands fa-whatsapp wp-floating-icon text-5xl"></i>
+
                 <h3 class="text-2xl font-black navy-blue uppercase mb-1">Serdar ŞEKER</h3>
                 <p class="text-blue-600 font-bold text-[10px] uppercase tracking-widest mb-8 italic">Sales and Service Manager</p>
                 <div class="space-y-4">
-                    <div class="flex items-center space-x-4 justify-center">
+                    <div class="flex items-center space-x-4">
                         <i class="fa-solid fa-phone text-blue-700 text-xs"></i>
-                        <span class="font-bold text-slate-700 text-sm">+90 555 105 91 95</span>
+                        <span class="font-bold text-slate-700 text-sm tracking-wide">+90 555 105 91 95</span>
                     </div>
-                    <div class="flex items-center space-x-4 justify-center">
+                    <div class="flex items-center space-x-4">
                         <i class="fa-solid fa-envelope text-blue-700 text-xs"></i>
-                        <span class="font-bold text-slate-700 text-sm lowercase text-center">serdar@idmmuhendislik.com</span>
+                        <span class="font-bold text-slate-700 text-sm lowercase">serdar@idmmuhendislik.com</span>
                     </div>
                 </div>
             </a>
@@ -90,15 +98,15 @@
     <section class="py-12 bg-white border-t border-gray-100">
         <div class="container mx-auto px-6 text-center">
             <div class="flex flex-col md:flex-row justify-center items-center gap-16 text-slate-500">
-                <div class="flex flex-col items-center text-center">
+                <div class="flex flex-col items-center">
                     <i class="fa-solid fa-location-dot text-blue-700 text-2xl mb-3"></i>
                     <h4 class="font-black navy-blue uppercase text-[10px] tracking-widest mb-2">Merkez Ofis</h4>
-                    <p class="text-[11px] font-medium uppercase max-w-[250px] mx-auto">Taşpazar Mah. 21 / Pir Ali Sultan Cad. No: 3/1 Aksaray</p>
+                    <p class="text-[11px] font-medium uppercase max-w-[250px] mx-auto text-center">Taşpazar Mah. 21 / Pir Ali Sultan Cad. No: 3/1 Aksaray</p>
                 </div>
-                <div class="flex flex-col items-center text-center">
+                <div class="flex flex-col items-center">
                     <i class="fa-solid fa-at text-blue-700 text-2xl mb-3"></i>
-                    <h4 class="font-black navy-blue uppercase text-[10px] tracking-widest mb-2">Kurumsal E-Posta</h4>
-                    <p class="text-[11px] font-bold lowercase">info@idmmuhendislik.com</p>
+                    <h4 class="font-black navy-blue uppercase text-[10px] tracking-widest mb-2 text-center">Kurumsal E-Posta</h4>
+                    <p class="text-[11px] font-bold lowercase text-center">info@idmmuhendislik.com</p>
                 </div>
             </div>
         </div>
