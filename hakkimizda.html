@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda | İDM Mühendislik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Tam olarak senin logonun rengi: #081234 */
+        .navy-blue { color: #081234; } 
+        .bg-navy { background-color: #081234; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+    <nav class="bg-white border-b border-gray-200 px-6 py-5 flex justify-between items-center sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center">
+            <a href="index.html" class="flex items-center gap-3"><img src="logo.png" alt="İDM Mühendislik" class="h-10 w-auto" style="mix-blend-mode:multiply;"><span class="text-xl font-black navy-blue tracking-tighter uppercase hidden sm:inline">İDM MÜHENDİSLİK</span></a>
+        </div>
+        <div class="hidden md:flex space-x-10 font-bold text-xs uppercase tracking-[0.2em] text-slate-600">
+            <a href="index.html" class="hover:text-blue-700 transition">Anasayfa</a>
+            <a href="hakkimizda.html" class="text-blue-700 border-b-2 border-blue-700 pb-1">Hakkımızda</a>
+            <a href="hizmetler.html" class="hover:text-blue-700 transition">Hizmetlerimiz</a>
+            <a href="iletisim.html" class="hover:text-blue-700 transition">İletişim</a>
+        </div>
+        <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px] focus:outline-none" aria-label="Menüyü Aç">
+            <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
+            <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
+            <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-200 shadow-md sticky top-[73px] z-40">
+        <div class="flex flex-col px-6 py-4 space-y-4 font-bold text-xs uppercase tracking-[0.2em] text-slate-600">
+            <a href="index.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">Anasayfa</a>
+            <a href="hakkimizda.html" class="text-blue-700 border-l-4 border-blue-700 pl-3 py-1">Hakkımızda</a>
+            <a href="hizmetler.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">Hizmetlerimiz</a>
+            <a href="iletisim.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">İletişim</a>
+        </div>
+    </div>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const lines = menuBtn.querySelectorAll('.hamburger-line');
+        menuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            if (!isOpen) {
+                lines[0].style.transform = 'translateY(7px) rotate(45deg)';
+                lines[1].style.opacity = '0';
+                lines[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+            } else {
+                lines[0].style.transform = '';
+                lines[1].style.opacity = '';
+                lines[2].style.transform = '';
+            }
+        });
+    </script>
+
+    <header class="bg-navy py-8 text-white text-center">
+        <h1 class="text-[24px] font-black uppercase tracking-[0.4em]">Kurumsal</h1>
+    </header>
+
+    <section class="py-16 container mx-auto px-6 max-w-5xl text-center">
+        <div class="max-w-3xl mx-auto text-center mb-20">
+            <h2 class="text-2xl font-black text-blue-700 uppercase tracking-[0.3em] mb-6">VİZYONUMUZ</h2>
+            <p class="text-base md:text-lg text-slate-600 leading-relaxed font-medium italic" data-aos="fade-up">
+                "Sektördeki uzun yıllara dayanan tecrübemizi, kalite ve güven ilkeleriyle harmanlayarak geleceğin sanayi ihtiyaçlarına bugünden cevap veriyoruz."
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6 text-left">
+                <h3 class="text-xl font-black navy-blue uppercase border-l-4 border-blue-700 pl-4">HAKKIMIZDA</h3>
+                <p class="text-gray-700 leading-loose text-sm font-medium">
+                    İDM Mühendislik olarak önceliğimiz; yüksek kalite standartlarını korurken, iş ortaklarımıza en optimum maliyetli çözümleri sunmaktır. Sektördeki tecrübelerimizi yenilikçi mühendislik yaklaşımlarıyla birleştirerek, ağır sanayi ve geri dönüşüm sektörüne değer katıyoruz.
+                </p>
+            </div>
+            <div data-aos="zoom-in">
+                <img src="bicak1.jpg" class="rounded-xl shadow-lg w-full h-72 object-cover" alt="İDM Mühendislik İmalat">
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-900 py-10 text-white/20 text-center text-[9px] uppercase tracking-[0.4em] mt-12">
+        &copy; 2026 İDM Mühendislik San. ve Tic. Ltd. Şti.
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+</body>
+</html>
