@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ürünlerimiz | İDM Mühendislik</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .navy-blue { color: #081234; }
+        .bg-navy { background-color: #081234; }
+
+        .product-card {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.08);
+            border-top: 4px solid #1d4ed8;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px -10px rgba(8,18,52,0.15);
+        }
+
+        /* Lightbox */
+        #lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; }
+        #lightbox.open { display:flex; }
+        #lightbox-img { max-width:90vw; max-height:90vh; border-radius:12px; object-fit:contain; animation:zoomIn 0.25s ease; }
+        @keyframes zoomIn { from{transform:scale(0.85);opacity:0;}to{transform:scale(1);opacity:1;} }
+
+        /* Slider dots */
+        .dot-btn { width:8px; height:8px; border-radius:50%; border:none; cursor:pointer; transition: background 0.3s; }
+    </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+
+    <!-- NAV -->
+    <nav class="bg-white border-b border-gray-200 px-6 py-3 flex justify-between items-center sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.png" alt="İDM Mühendislik" class="h-14 w-auto" style="mix-blend-mode:multiply;">
+                <span class="text-xl font-black navy-blue tracking-tighter uppercase hidden sm:inline">İDM MÜHENDİSLİK</span>
+            </a>
+        </div>
+        <div class="hidden md:flex space-x-10 font-bold text-xs uppercase tracking-[0.2em] text-slate-600">
+            <a href="index.html" class="hover:text-blue-700 transition">Anasayfa</a>
+            <a href="hakkimizda.html" class="hover:text-blue-700 transition">Hakkımızda</a>
+            <a href="hizmetler.html" class="hover:text-blue-700 transition">Hizmetlerimiz</a>
+            <a href="urunler.html" class="text-blue-700 border-b-2 border-blue-700 pb-1">Ürünlerimiz</a>
+            <a href="iletisim.html" class="hover:text-blue-700 transition">İletişim</a>
+        </div>
+        <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px] focus:outline-none" aria-label="Menüyü Aç">
+            <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
+            <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
+            <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-200 shadow-md sticky top-[73px] z-40">
+        <div class="flex flex-col px-6 py-4 space-y-4 font-bold text-xs uppercase tracking-[0.2em] text-slate-600">
+            <a href="index.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">Anasayfa</a>
+            <a href="hakkimizda.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">Hakkımızda</a>
+            <a href="hizmetler.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">Hizmetlerimiz</a>
+            <a href="urunler.html" class="text-blue-700 border-l-4 border-blue-700 pl-3 py-1">Ürünlerimiz</a>
+            <a href="iletisim.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">İletişim</a>
+        </div>
+    </div>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const lines = menuBtn.querySelectorAll('.hamburger-line');
+        menuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            if (!isOpen) {
+                lines[0].style.transform = 'translateY(7px) rotate(45deg)';
+                lines[1].style.opacity = '0';
+                lines[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+            } else {
+                lines[0].style.transform = '';
+                lines[1].style.opacity = '';
+                lines[2].style.transform = '';
+            }
+        });
+    </script>
+
+    <!-- HEADER -->
+    <header class="bg-navy py-8 text-white text-center">
+        <h1 class="text-[24px] font-black uppercase tracking-[0.4em]">Ürünlerimiz</h1>
+    </header>
+
+    <!-- GİRİŞ -->
+    <section class="py-14 container mx-auto px-6 max-w-5xl text-center">
+        <div class="max-w-3xl mx-auto mb-6">
+            <h2 class="text-2xl font-black text-blue-700 uppercase tracking-[0.3em] mb-6">ÜRÜNLERİMİZ</h2>
+            <p class="text-base md:text-lg text-slate-600 leading-relaxed font-medium italic" data-aos="fade-up">
+                "Geri dönüşüm tesisleri, enerji santralleri ve endüstriyel fabrikalar için ürettiğimiz her ürün; ham madde seçiminden işleme, yüzey bitiminden sevkiyata kadar titiz kalite kontrol süreçlerinden geçerek, mühendislik hassasiyeti ve sektörel standartlarla teslim edilmektedir."
+            </p>
+        </div>
+    </section>
+
+    <!-- ÜRÜN 1 -->
+    <section class="pb-16 container mx-auto px-6 max-w-6xl">
+        <div class="product-card" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 gap-0">
+                <!-- Sol: Bilgi -->
+                <div class="p-10 flex flex-col justify-center">
+                    <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4 border-l-4 border-blue-700 pl-3">Ürün 01</span>
+                    <h2 class="text-2xl font-black navy-blue uppercase mb-5">Shredder Bıçak<br><span class="text-blue-700">Takımları</span></h2>
+                    <p class="text-sm text-slate-600 leading-loose mb-6 font-medium">
+                        Geri dönüşüm ve ağır sanayi tesislerinde kullanılan shredder makineleri için özel alaşımlı bıçak takımları üretiyoruz. Yüksek aşınma direnci ve uzun kullanım ömrü ile sektörün önde gelen markalarına uyumlu çözümler sunuyoruz.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Özel Alaşım</span>
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Yüksek Dayanım</span>
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Tüm Markalara Uyumlu</span>
+                    </div>
+                    <a href="iletisim.html" class="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-7 py-3 rounded font-black transition tracking-widest text-xs uppercase w-fit">
+                        Teklif Al <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+                <!-- Sağ: Slider -->
+                <div class="relative overflow-hidden h-36 md:h-auto min-h-[140px]">
+                    <div class="flex h-full transition-transform duration-500 ease-in-out" id="slider1-track">
+                        <img src="bicak1.jpg" class="flex-shrink-0 w-full h-full object-cover cursor-zoom-in" alt="Bıçak 1" onclick="openLightbox(this.src)">
+                        <img src="bicak2.jpg" class="flex-shrink-0 w-full h-full object-cover cursor-zoom-in" alt="Bıçak 2" onclick="openLightbox(this.src)">
+                        <img src="bicak3.jpg" class="flex-shrink-0 w-full h-full object-cover cursor-zoom-in" alt="Bıçak 3" onclick="openLightbox(this.src)">
+                        <img src="bicak4.jpg" class="flex-shrink-0 w-full h-full object-cover cursor-zoom-in" alt="Bıçak 4" onclick="openLightbox(this.src)">
+                    </div>
+                    <button onclick="s1Move(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition z-10">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <button onclick="s1Move(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition z-10">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2" id="s1-dots"></div>
+                    <div class="absolute top-3 right-3 bg-black/40 text-white text-[10px] px-2 py-1 rounded-full flex items-center gap-1 pointer-events-none">
+                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> Büyüt
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ÜRÜN 2 -->
+    <section class="pb-16 container mx-auto px-6 max-w-6xl">
+        <div class="product-card" data-aos="fade-up">
+            <div class="grid md:grid-cols-2 gap-0">
+                <!-- Sol: Slider -->
+                <div class="relative overflow-hidden h-36 md:h-auto min-h-[140px] order-2 md:order-1">
+                    <div class="flex h-full transition-transform duration-500 ease-in-out" id="slider2-track">
+                        <img src="rulo1.jpg" class="flex-shrink-0 w-full h-full object-cover cursor-zoom-in" alt="Rulo 1" onclick="openLightbox(this.src)">
+                        <img src="rulo2.jpg" class="flex-shrink-0 w-full h-full object-cover cursor-zoom-in" alt="Rulo 2" onclick="openLightbox(this.src)">
+                    </div>
+                    <button onclick="s2Move(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition z-10">
+                        <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                    <button onclick="s2Move(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition z-10">
+                        <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2" id="s2-dots"></div>
+                    <div class="absolute top-3 right-3 bg-black/40 text-white text-[10px] px-2 py-1 rounded-full flex items-center gap-1 pointer-events-none">
+                        <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> Büyüt
+                    </div>
+                </div>
+                <!-- Sağ: Bilgi -->
+                <div class="p-10 flex flex-col justify-center order-1 md:order-2">
+                    <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4 border-l-4 border-blue-700 pl-3">Ürün 02</span>
+                    <h2 class="text-2xl font-black navy-blue uppercase mb-5">Konveyör<br><span class="text-blue-700">Rulo İmalatı</span></h2>
+                    <p class="text-sm text-slate-600 leading-loose mb-6 font-medium">
+                        Taşıma sistemlerinde kritik öneme sahip konveyör rulolar, yüksek yük kapasitesi ve uzun ömürlü yapısıyla üretilmektedir. Standart ve özel ölçülerde, farklı çevre koşullarına uygun malzemelerle imal ediyoruz.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-8">
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Özel Ölçü</span>
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Yüksek Yük Kapasitesi</span>
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Uzun Ömür</span>
+                    </div>
+                    <a href="iletisim.html" class="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white px-7 py-3 rounded font-black transition tracking-widest text-xs uppercase w-fit">
+                        Teklif Al <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-navy py-6 text-center text-white mb-0">
+        <div class="container mx-auto px-6">
+            <h2 class="text-xl md:text-2xl font-black uppercase tracking-[0.4em] mb-5">Özel Ürün mü Arıyorsunuz?</h2>
+            <p class="text-white/60 text-sm mb-6 font-medium">Listelenmemiş ürünler için de teklif alabilirsiniz.</p>
+            <a href="iletisim.html" class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-12 py-3 rounded font-black transition tracking-widest text-xs uppercase">Bizimle İletişime Geçin</a>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" onclick="closeLightbox()">
+        <button onclick="closeLightbox()" style="position:absolute;top:20px;right:28px;color:white;font-size:2rem;font-weight:900;background:none;border:none;cursor:pointer;">&times;</button>
+        <img id="lightbox-img" src="" onclick="event.stopPropagation()">
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#081234] text-white pt-14 pb-6 mt-0">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid md:grid-cols-4 gap-10 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="logo.png" alt="İDM Mühendislik" class="h-12 w-auto" style="mix-blend-mode:screen;">
+                        <span class="text-lg font-black uppercase tracking-tight">İDM Mühendislik</span>
+                    </div>
+                    <p class="text-white/50 text-xs leading-relaxed font-medium">Ağır sanayi ve geri dönüşüm sektörü için yüksek dayanımlı yedek parça üretimi ve özel mühendislik çözümleri.</p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Hızlı Linkler</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/70 hover:text-white text-sm font-medium transition">Anasayfa</a></li>
+                        <li><a href="hakkimizda.html" class="text-white/70 hover:text-white text-sm font-medium transition">Hakkımızda</a></li>
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Hizmetlerimiz</a></li>
+                        <li><a href="urunler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Ürünlerimiz</a></li>
+                        <li><a href="iletisim.html" class="text-white/70 hover:text-white text-sm font-medium transition">İletişim</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Hizmetlerimiz</h4>
+                    <ul class="space-y-3">
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Tersine Mühendislik</a></li>
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Tasarım & Proje Üretimi</a></li>
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Yedek Parça İmalatı</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">İletişim</h4>
+                    <ul class="space-y-3" style="list-style:none;padding:0;margin:0;">
+                        <li style="display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:center;">
+                            <i class="fa-solid fa-phone text-blue-500" style="font-size:11px;text-align:center;"></i>
+                            <span class="text-white/70 text-sm font-medium">+90 538 887 60 40</span>
+                        </li>
+                        <li style="display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:center;">
+                            <i class="fa-solid fa-phone text-blue-500" style="font-size:11px;text-align:center;"></i>
+                            <span class="text-white/70 text-sm font-medium">+90 555 105 91 95</span>
+                        </li>
+                        <li style="display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:center;">
+                            <i class="fa-solid fa-envelope text-blue-500" style="font-size:11px;text-align:center;"></i>
+                            <span class="text-white/70 text-sm font-medium lowercase">info@idmmuhendislik.com</span>
+                        </li>
+                        <li style="display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:start;">
+                            <i class="fa-solid fa-location-dot text-blue-500" style="font-size:11px;text-align:center;margin-top:3px;"></i>
+                            <span class="text-white/70 text-sm font-medium">Taşpazar Mah. 21 / Pir Ali Sultan Cad. No: 3/1 Aksaray</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+                <p class="text-white/30 text-[10px] uppercase tracking-[0.3em]">&copy; İDM Mühendislik San. ve Tic. Ltd. Şti.</p>
+                <p class="text-white/30 text-[10px] tracking-[0.1em]">Copyright 2025 © Designed by Serdar ŞEKER</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Slider 1
+        let s1cur = 0, s1tot = 4;
+        const s1track = document.getElementById('slider1-track');
+        const s1dots = document.getElementById('s1-dots');
+        for(let i=0;i<s1tot;i++){
+            const d=document.createElement('button');
+            d.className='dot-btn';
+            d.style.background=i===0?'white':'rgba(255,255,255,0.4)';
+            d.onclick=(e)=>{e.stopPropagation();s1go(i);};
+            s1dots.appendChild(d);
+        }
+        function s1go(n){s1cur=n;s1track.style.transform=`translateX(-${n*100}%)`;s1dots.querySelectorAll('button').forEach((d,i)=>d.style.background=i===n?'white':'rgba(255,255,255,0.4)');}
+        function s1Move(dir){s1go((s1cur+dir+s1tot)%s1tot);}
+        setInterval(()=>s1Move(1),3500);
+
+        // Slider 2
+        let s2cur=0,s2tot=2;
+        const s2track=document.getElementById('slider2-track');
+        const s2dots=document.getElementById('s2-dots');
+        for(let i=0;i<s2tot;i++){
+            const d=document.createElement('button');
+            d.className='dot-btn';
+            d.style.background=i===0?'white':'rgba(255,255,255,0.4)';
+            d.onclick=(e)=>{e.stopPropagation();s2go(i);};
+            s2dots.appendChild(d);
+        }
+        function s2go(n){s2cur=n;s2track.style.transform=`translateX(-${n*100}%)`;s2dots.querySelectorAll('button').forEach((d,i)=>d.style.background=i===n?'white':'rgba(255,255,255,0.4)');}
+        function s2Move(dir){s2go((s2cur+dir+s2tot)%s2tot);}
+        setInterval(()=>s2Move(1),4000);
+
+        // Lightbox
+        function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+        function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+        document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeLightbox();});
+    </script>
+</body>
+</html>
