@@ -13,6 +13,11 @@
         .bg-navy { background-color: #081234; }
         .hero-gradient { background: linear-gradient(rgba(8, 18, 52, 0.7), rgba(8, 18, 52, 0.7)); }
         
+        /* Bıçak Özellikleri Tablo Stilleri */
+        .spec-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #e2e8f0; font-size: 0.85rem; }
+        .spec-label { color: #64748b; font-weight: 600; min-width: 130px; }
+        .spec-value { color: #1e293b; font-weight: 500; text-align: right; }
+        
         @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -57,14 +62,12 @@
             <a href="urunler.html" class="hover:text-blue-700 transition">Ürünlerimiz</a>
             <a href="iletisim.html" class="hover:text-blue-700 transition">İletişim</a>
         </div>
-        <!-- Hamburger Butonu -->
         <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px] focus:outline-none" aria-label="Menüyü Aç">
             <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
             <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
             <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
         </button>
     </nav>
-    <!-- Mobil Menü -->
     <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-200 shadow-md sticky top-[73px] z-40">
         <div class="flex flex-col px-6 py-4 space-y-4 font-bold text-xs uppercase tracking-[0.2em] text-slate-600">
             <a href="index.html" class="text-blue-700 border-l-4 border-blue-700 pl-3 py-1">Anasayfa</a>
@@ -110,95 +113,68 @@
         </div>
     </header>
 
-    <!-- Shredder Bıçak Tanıtım Bölümü -->
-    <section class="py-14 container mx-auto px-6 max-w-6xl">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div data-aos="fade-right">
-                <h2 class="text-3xl md:text-4xl font-black navy-blue uppercase leading-tight mb-6">Shredder<br><span class="text-blue-700">Bıçak Takımları</span></h2>
-                <p class="text-slate-600 text-sm leading-loose mb-8 font-medium">
-                    Geri dönüşüm ve ağır sanayi tesislerinde kullanılan shredder makineleri için yüksek dayanımlı, özel alaşımlı bıçak takımları üretiyoruz. Tüm marka ve modellere uyumlu, uzun ömürlü çözümler sunuyoruz.
-                </p>
-                <div class="flex flex-wrap gap-3 mb-8">
-                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">Özel Alaşım</span>
-                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">Uzun Ömür</span>
-                    <span class="bg-slate-100 text-slate-700 text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide">Yüksek Dayanım</span>
-                </div>
-                <a href="hizmetler.html" class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded font-black transition tracking-widest text-xs uppercase shadow-lg">Detayları İncele</a>
-            </div>
+    <section class="py-20 max-w-5xl mx-auto px-6 bg-slate-50">
 
-            <!-- Otomatik Kayan Galeri -->
-            <div class="relative overflow-hidden rounded-2xl shadow-2xl h-80" data-aos="fade-left">
-                <div class="flex h-full transition-transform duration-500 ease-in-out" id="hero-track">
-                    <img src="bicak1.jpg" class="flex-shrink-0 w-full h-80 object-cover cursor-zoom-in" alt="Bıçak 1" onclick="openLightboxHero(this.src)">
-                    <img src="bicak2.jpg" class="flex-shrink-0 w-full h-80 object-cover cursor-zoom-in" alt="Bıçak 2" onclick="openLightboxHero(this.src)">
-                    <img src="bicak3.jpg" class="flex-shrink-0 w-full h-80 object-cover cursor-zoom-in" alt="Bıçak 3" onclick="openLightboxHero(this.src)">
-                    <img src="bicak4.jpg" class="flex-shrink-0 w-full h-80 object-cover cursor-zoom-in" alt="Bıçak 4" onclick="openLightboxHero(this.src)">
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-5xl font-black uppercase tracking-widest navy-blue">SHREDDER BIÇAK TAKIMLARI</h2>
+            
+            <hr class="border-blue-700 border-t-4 mt-4 mb-8 w-full max-w-4xl mx-auto">
+            
+            <p class="text-slate-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-medium">
+                Geri dönüşüm tesislerinden enerji santrallerine kadar geniş bir kullanım alanına sahip 
+                shredder makineleri için <strong>yüksek dayanımlı, özel alaşımlı</strong> bıçak takımları üretiyoruz. 
+                Hareketli ve sabit bıçaklarımız; uzun ömürlü yapısı, 4 köşe çevrilebilir tasarımı ve yüksek 
+                aşınma direnciyle makinenizin verimini maksimuma taşır.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-24" data-aos="fade-up">
+            <div>
+                <h3 class="text-3xl font-black mb-6 text-blue-700 uppercase tracking-wide">HAREKETLİ BIÇAKLAR</h3>
+                <div class="spec-row"><span class="spec-label">Ölçü</span><span class="spec-value">110 x 110 x 56 mm</span></div>
+                <div class="spec-row"><span class="spec-label">Kalite</span><span class="spec-value">Dövme Çelik</span></div>
+                <div class="spec-row"><span class="spec-label">Avantaj</span><span class="spec-value">Yüksek Aşınma ve Kırılma Direnci</span></div>
+                <div class="spec-row"><span class="spec-label">Kullanım Şekli</span><span class="spec-value">4 Köşe Çevrilerek Kullanılabilir</span></div>
+                <div class="spec-row" style="border:none"><span class="spec-label">Uygulama Alanı</span><span class="spec-value">Geri Dönüşüm, Enerji Santrali, Atık Tesisleri</span></div>
+            </div>
+            <div class="border-2 border-blue-200 rounded-xl h-64 flex flex-col items-center justify-center gap-2 bg-white shadow-lg overflow-hidden relative">
+                <i class="fa-solid fa-image text-4xl text-blue-300"></i>
+                <p class="text-slate-400 text-sm font-medium">Resimler ve 3D Görüntüleri</p>
                 </div>
-                <!-- Ok butonları -->
-                <button onclick="heroSlide(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition z-10">
-                    <i class="fa-solid fa-chevron-left text-xs"></i>
-                </button>
-                <button onclick="heroSlide(1)" class="absolute right-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition z-10">
-                    <i class="fa-solid fa-chevron-right text-xs"></i>
-                </button>
-                <!-- Nokta indikatörleri -->
-                <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2" id="hero-dots"></div>
-                <!-- Büyüt ipucu -->
-                <div class="absolute bottom-3 right-3 bg-black/40 text-white text-[10px] px-2 py-1 rounded-full flex items-center gap-1 pointer-events-none">
-                    <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> Büyüt
-                </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-24" data-aos="fade-up">
+            <div class="border-2 border-blue-200 rounded-xl h-64 flex flex-col items-center justify-center gap-2 bg-white shadow-lg order-2 md:order-1 relative overflow-hidden">
+                <i class="fa-solid fa-image text-4xl text-blue-300"></i>
+                <p class="text-slate-400 text-sm font-medium">Resimler ve 3D Görüntüleri</p>
+            </div>
+            <div class="order-1 md:order-2">
+                <h3 class="text-3xl font-black mb-6 text-blue-700 uppercase tracking-wide">SABİT KÜÇÜK BIÇAKLAR</h3>
+                <div class="spec-row"><span class="spec-label">Ölçü</span><span class="spec-value">215 x 200 x 50 mm</span></div>
+                <div class="spec-row"><span class="spec-label">Kalite</span><span class="spec-value">Özel İmalat</span></div>
+                <div class="spec-row"><span class="spec-label">Avantaj</span><span class="spec-value">Yüksek Aşınma ve Kırılma Direnci</span></div>
+                <div class="spec-row"><span class="spec-label">Kullanım Şekli</span><span class="spec-value">Çevrilerek Kullanılabilir</span></div>
+                <div class="spec-row" style="border:none"><span class="spec-label">Uygulama Alanı</span><span class="spec-value">Geri Dönüşüm, Enerji Santrali, Atık Tesisleri</span></div>
             </div>
         </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+            <div>
+                <h3 class="text-3xl font-black mb-6 text-blue-700 uppercase tracking-wide">SABİT BÜYÜK BIÇAKLAR</h3>
+                <div class="spec-row"><span class="spec-label">Ölçü</span><span class="spec-value">416 x 200 x 50 mm</span></div>
+                <div class="spec-row"><span class="spec-label">Kalite</span><span class="spec-value">Özel İmalat</span></div>
+                <div class="spec-row"><span class="spec-label">Avantaj</span><span class="spec-value">Yüksek Aşınma ve Kırılma Direnci</span></div>
+                <div class="spec-row"><span class="spec-label">Kullanım Şekli</span><span class="spec-value">Çevrilerek Kullanılabilir</span></div>
+                <div class="spec-row" style="border:none"><span class="spec-label">Uygulama Alanı</span><span class="spec-value">Geri Dönüşüm, Enerji Santrali, Atık Tesisleri</span></div>
+            </div>
+            <div class="border-2 border-blue-200 rounded-xl h-64 flex flex-col items-center justify-center gap-2 bg-white shadow-lg overflow-hidden relative">
+                <i class="fa-solid fa-image text-4xl text-blue-300"></i>
+                <p class="text-slate-400 text-sm font-medium">Resimler ve 3D Görüntüleri</p>
+            </div>
+        </div>
+
     </section>
 
-    <!-- Lightbox (hero galeri için) -->
-    <div id="hero-lightbox" onclick="closeHeroLightbox()">
-        <button onclick="closeHeroLightbox()" style="position:absolute;top:20px;right:28px;color:white;font-size:2rem;font-weight:900;background:none;border:none;cursor:pointer;">&times;</button>
-        <img id="hero-lightbox-img" src="" onclick="event.stopPropagation()">
-    </div>
-    <style>
-        #hero-lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; }
-        #hero-lightbox.open { display:flex; }
-        #hero-lightbox-img { max-width:90vw; max-height:90vh; border-radius:12px; object-fit:contain; animation:zoomIn2 0.25s ease; }
-        @keyframes zoomIn2 { from{transform:scale(0.85);opacity:0;}to{transform:scale(1);opacity:1;} }
-        #hero-dots button { width:8px; height:8px; border-radius:50%; border:none; cursor:pointer; }
-    </style>
-    <script>
-        let hCur = 0;
-        const hTot = 4;
-        const hTrack = document.getElementById('hero-track');
-        const hDots = document.getElementById('hero-dots');
-
-        for(let i = 0; i < hTot; i++) {
-            const d = document.createElement('button');
-            d.style.background = i === 0 ? 'white' : 'rgba(255,255,255,0.4)';
-            d.onclick = (e) => { e.stopPropagation(); heroGoTo(i); };
-            hDots.appendChild(d);
-        }
-
-        function heroGoTo(n) {
-            hCur = n;
-            hTrack.style.transform = `translateX(-${hCur * 100}%)`;
-            hDots.querySelectorAll('button').forEach((d,i) => {
-                d.style.background = i === hCur ? 'white' : 'rgba(255,255,255,0.4)';
-            });
-        }
-        function heroSlide(dir) { heroGoTo((hCur + dir + hTot) % hTot); }
-        setInterval(() => heroSlide(1), 3500);
-
-        function openLightboxHero(src) {
-            document.getElementById('hero-lightbox-img').src = src;
-            document.getElementById('hero-lightbox').classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeHeroLightbox() {
-            document.getElementById('hero-lightbox').classList.remove('open');
-            document.body.style.overflow = '';
-        }
-        heroGoTo(0);
-    </script>
-
-    <!-- İstatistik Bandı -->
     <section class="bg-[#081234] py-10">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center text-white">
@@ -302,13 +278,11 @@
             </div>
         </div>
     </section>
-    </section>
 
 <footer class="bg-[#081234] text-white pt-14 pb-6 mt-12">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="grid md:grid-cols-5 gap-8 mb-12">
 
-                <!-- Logo + Açıklama -->
                 <div>
                     <div class="flex items-center gap-3 mb-4">
                         <img src="logo.png" alt="İDM Mühendislik" class="h-12 w-auto" style="mix-blend-mode:screen;">
@@ -319,7 +293,6 @@
                     </p>
                 </div>
 
-                <!-- Hızlı Linkler -->
                 <div>
                     <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Hızlı Linkler</h4>
                     <ul class="space-y-3">
@@ -331,7 +304,6 @@
                     </ul>
                 </div>
 
-                <!-- Hizmetlerimiz -->
                 <div>
                     <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Hizmetlerimiz</h4>
                     <ul class="space-y-3">
@@ -341,7 +313,6 @@
                     </ul>
                 </div>
 
-                <!-- Ürünlerimiz -->
                 <div>
                     <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Ürünlerimiz</h4>
                     <ul class="space-y-3">
@@ -350,7 +321,6 @@
                     </ul>
                 </div>
 
-                <!-- İletişim -->
                 <div>
                     <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">İletişim</h4>
                     <ul class="space-y-3" style="list-style:none; padding:0; margin:0;">
@@ -375,7 +345,6 @@
 
             </div>
 
-            <!-- Alt Bar -->
             <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
                 <p class="text-white/30 text-[10px] uppercase tracking-[0.3em]">&copy; İDM Mühendislik San. ve Tic. Ltd. Şti.</p>
                 <p class="text-white/30 text-[10px] tracking-[0.1em]">Copyright 2025 © Designed by Serdar ŞEKER</p>
@@ -386,7 +355,6 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ duration: 1000, once: true });</script>
 
-    <!-- WhatsApp Sabit Butonu -->
     <a href="https://wa.me/905551059195" target="_blank" title="Serdar ŞEKER ile WhatsApp'tan İletişim"
         style="position:fixed; bottom:28px; right:28px; z-index:9999; background-color:#25D366; color:#fff;
                width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center;
