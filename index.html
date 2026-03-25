@@ -55,4 +55,401 @@
         /* Lightbox Stilleri */
         .modal-overlay { position: fixed; inset: 0; background-color: rgba(8, 18, 52, 0.95); z-index: 10000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease; }
         .modal-overlay.open { display: flex; opacity: 1; }
-        .modal-content { width
+        .modal-content { max-width: 90%; max-height: 90%; background: transparent; overflow: hidden; position: relative; border-radius: 1rem; }
+        #modal-image { max-width: 100%; max-height: 100%; object-contain; display: none; }
+        #modal-model-container { width: 90vw; height: 90vh; max-width: 1200px; max-height: 800px; display: none; background: transparent; }
+        #close-modal { position: absolute; top: 1rem; right: 1rem; font-size: 1.5rem; color: white; cursor: pointer; z-index: 10001; opacity: 0.7; transition: opacity 0.3s ease; }
+        #close-modal:hover { opacity: 1; }
+    </style>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body class="bg-slate-50 font-sans text-slate-900">
+
+    <nav class="bg-white border-b border-gray-200 px-6 py-3 flex justify-between items-center sticky top-0 z-50 shadow-sm">
+        <div class="flex items-center">
+            <a href="index.html" class="flex items-center gap-3"><img src="logo.png" alt="İDM Mühendislik" class="h-14 w-auto" style="mix-blend-mode:multiply;"><span class="text-xl font-black navy-blue tracking-tighter uppercase hidden sm:inline">İDM MÜHENDİSLİK</span></a>
+        </div>
+        <div class="hidden md:flex space-x-10 font-bold text-xs uppercase tracking-[0.2em] text-slate-600">
+            <a href="index.html" class="text-blue-700 border-b-2 border-blue-700 pb-1">Anasayfa</a>
+            <a href="hakkimizda.html" class="hover:text-blue-700 transition">Hakkımızda</a>
+            <a href="hizmetler.html" class="hover:text-blue-700 transition">Hizmetlerimiz</a>
+            <a href="urunler.html" class="hover:text-blue-700 transition">Ürünlerimiz</a>
+            <a href="iletisim.html" class="hover:text-blue-700 transition">İletişim</a>
+        </div>
+        <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-9 h-9 gap-[5px] focus:outline-none" aria-label="Menüyü Aç">
+            <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
+            <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
+            <span class="hamburger-line block w-6 h-[2px] bg-slate-800 transition-all duration-300"></span>
+        </button>
+    </nav>
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-b border-gray-200 shadow-md sticky top-[73px] z-40">
+        <div class="flex flex-col px-6 py-4 space-y-4 font-bold text-xs uppercase tracking-[0.2em] text-slate-600">
+            <a href="index.html" class="text-blue-700 border-l-4 border-blue-700 pl-3 py-1">Anasayfa</a>
+            <a href="hakkimizda.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">Hakkımızda</a>
+            <a href="hizmetler.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">Hizmetlerimiz</a>
+            <a href="urunler.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">Ürünlerimiz</a>
+            <a href="iletisim.html" class="hover:text-blue-700 hover:border-l-4 hover:border-blue-700 hover:pl-3 transition-all py-1">İletişim</a>
+        </div>
+    </div>
+    
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const lines = menuBtn.querySelectorAll('.hamburger-line');
+        menuBtn.addEventListener('click', () => {
+            const isOpen = !mobileMenu.classList.contains('hidden');
+            mobileMenu.classList.toggle('hidden');
+            if (!isOpen) {
+                lines[0].style.transform = 'translateY(7px) rotate(45deg)';
+                lines[1].style.opacity = '0';
+                lines[2].style.transform = 'translateY(-7px) rotate(-45deg)';
+            } else {
+                lines[0].style.transform = '';
+                lines[1].style.opacity = '';
+                lines[2].style.transform = '';
+            }
+        });
+    </script>
+    <header class="relative h-[55vh] flex items-center overflow-hidden">
+        <img src="bicak3.jpg" class="absolute inset-0 w-full h-full object-cover" alt="İDM Mühendislik İmalat">
+        <div class="absolute inset-0 hero-gradient"></div>
+        <div class="container mx-auto px-6 relative z-10 text-white" data-aos="fade-right">
+            <h1 class="text-4xl md:text-6xl font-black mb-6 uppercase tracking-tighter leading-tight text-center">
+                ENDÜSTRİYEL GÜÇ,<br><span class="text-blue-500">MÜHENDİSLİK HASSASİYETİ</span>
+            </h1>
+            <p class="text-lg md:text-xl opacity-90 mb-10 max-w-2xl mx-auto font-medium italic text-center">
+                "Ağır sanayi ve geri dönüşüm tesisleri için yüksek dayanımlı yedek parça üretimi ve özel mühendislik çözümleri."
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="hizmetler.html" class="bg-blue-700 hover:bg-blue-800 px-8 py-4 rounded font-black transition tracking-widest text-xs shadow-xl uppercase">Üretimimizi Keşfedin</a>
+                <a href="iletisim.html" class="bg-white/10 hover:bg-white/20 backdrop-blur-sm px-8 py-4 rounded font-black transition tracking-widest text-xs border border-white/30 uppercase">Teklif Alın</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="pt-10 pb-20 max-w-5xl mx-auto px-6 bg-slate-50">
+
+        <div class="text-center mb-16" data-aos="fade-up">
+            <h2 class="text-3xl md:text-4xl font-black uppercase tracking-widest navy-blue">SHREDDER BIÇAK TAKIMLARI</h2>
+            <hr class="border-blue-700 border-t-4 mt-4 mb-8 w-full max-w-4xl mx-auto">
+            <p class="text-slate-600 max-w-3xl mx-auto text-base md:text-lg leading-relaxed font-medium">
+                Geri dönüşüm tesislerinden enerji santrallerine kadar geniş bir kullanım alanına sahip 
+                shredder makineleri için <strong>yüksek dayanımlı, özel alaşımlı</strong> bıçak takımları üretiyoruz. 
+                Hareketli ve sabit bıçaklarımız; uzun ömürlü yapısı, 4 köşe çevrilebilir tasarımı ve yüksek 
+                aşınma direnciyle makinenizin verimini maksimuma taşır.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-24" data-aos="fade-up">
+            <div>
+                <h3 class="text-3xl font-black mb-6 text-blue-700 uppercase tracking-wide">HAREKETLİ BIÇAKLAR</h3>
+                <div class="spec-row"><span class="spec-label">Ölçü</span><span class="spec-value">110 x 110 x 56 mm</span></div>
+                <div class="spec-row"><span class="spec-label">Kalite</span><span class="spec-value">Dövme Çelik</span></div>
+                <div class="spec-row"><span class="spec-label">Avantaj</span><span class="spec-value">Yüksek Aşınma ve Kırılma Direnci</span></div>
+                <div class="spec-row"><span class="spec-label">Kullanım Şekli</span><span class="spec-value">4 Köşe Çevrilerek Kullanılabilir</span></div>
+                <div class="spec-row" style="border:none"><span class="spec-label">Uygulama Alanı</span><span class="spec-value">Geri Dönüşüm, Enerji Santrali, Atık Tesisleri</span></div>
+            </div>
+            <div class="border border-gray-200 rounded-3xl shadow-lg bg-white overflow-hidden cursor-pointer" onclick="openLightbox('karebicak.glb', 'model')">
+                <div class="grid grid-cols-1 md:grid-cols-2 h-[350px] md:h-80">
+                    <div class="relative bg-slate-50 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-center p-6 group">
+                        <img src="bicak1.jpg" alt="Şredder Hareketli Bıçak Fotoğrafı" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-white/70 backdrop-blur-sm text-[#081234] text-[9px] font-black uppercase px-2 py-1 rounded border border-gray-200 tracking-widest shadow-sm">Fotoğraf</span>
+                    </div>
+                    <div class="relative bg-white flex items-center justify-center p-2 group">
+                        <model-viewer 
+                            src="karebicak.glb" 
+                            alt="Şredder Kare Bıçak 3D Modeli" 
+                            auto-rotate 
+                            camera-controls 
+                            shadow-intensity="1" 
+                            exposure="1" 
+                            style="width:100%; height:100%; background:transparent;" 
+                            loading="eager">
+                            <div slot="progress-bar" style="display:none;"></div>
+                        </model-viewer>
+                        <span class="absolute top-3 right-3 bg-blue-700/80 backdrop-blur-sm text-white text-[9px] font-black uppercase px-2 py-1 rounded tracking-widest shadow-sm">3D Görünüm</span>
+                        <i class="fa-solid fa-hand-pointer absolute bottom-3 right-3 text-blue-300 text-xl opacity-80 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-24" data-aos="fade-up">
+            <div class="border border-gray-200 rounded-3xl shadow-lg bg-white overflow-hidden order-2 md:order-1 cursor-pointer" onclick="openLightbox('karebicak.glb', 'model')">
+                <div class="grid grid-cols-1 md:grid-cols-2 h-[350px] md:h-80">
+                    <div class="relative bg-slate-50 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-center p-6 group">
+                        <img src="bicak1.jpg" alt="Şredder Sabit Küçük Bıçak Fotoğrafı" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-white/70 backdrop-blur-sm text-[#081234] text-[9px] font-black uppercase px-2 py-1 rounded border border-gray-200 tracking-widest shadow-sm">Fotoğraf</span>
+                    </div>
+                    <div class="relative bg-white flex items-center justify-center p-2 group">
+                        <model-viewer 
+                            src="karebicak.glb" 
+                            alt="Şredder Sabit Küçük Bıçak 3D Modeli" 
+                            auto-rotate 
+                            camera-controls 
+                            shadow-intensity="1" 
+                            exposure="1" 
+                            style="width:100%; height:100%; background:transparent;" 
+                            loading="eager">
+                            <div slot="progress-bar" style="display:none;"></div>
+                        </model-viewer>
+                        <span class="absolute top-3 right-3 bg-blue-700/80 backdrop-blur-sm text-white text-[9px] font-black uppercase px-2 py-1 rounded tracking-widest shadow-sm">3D Görünüm</span>
+                        <i class="fa-solid fa-hand-pointer absolute bottom-3 right-3 text-blue-300 text-xl opacity-80 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2">
+                <h3 class="text-3xl font-black mb-6 text-blue-700 uppercase tracking-wide">SABİT KÜÇÜK BIÇAKLAR</h3>
+                <div class="spec-row"><span class="spec-label">Ölçü</span><span class="spec-value">215 x 200 x 50 mm</span></div>
+                <div class="spec-row"><span class="spec-label">Kalite</span><span class="spec-value">Özel İmalat</span></div>
+                <div class="spec-row"><span class="spec-label">Avantaj</span><span class="spec-value">Yüksek Aşınma ve Kırılma Direnci</span></div>
+                <div class="spec-row"><span class="spec-label">Kullanım Şekli</span><span class="spec-value">Çevrilerek Kullanılabilir</span></div>
+                <div class="spec-row" style="border:none"><span class="spec-label">Uygulama Alanı</span><span class="spec-value">Geri Dönüşüm, Enerji Santrali, Atık Tesisleri</span></div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-up">
+            <div>
+                <h3 class="text-3xl font-black mb-6 text-blue-700 uppercase tracking-wide">SABİT BÜYÜK BIÇAKLAR</h3>
+                <div class="spec-row"><span class="spec-label">Ölçü</span><span class="spec-value">416 x 200 x 50 mm</span></div>
+                <div class="spec-row"><span class="spec-label">Kalite</span><span class="spec-value">Özel İmalat</span></div>
+                <div class="spec-row"><span class="spec-label">Avantaj</span><span class="spec-value">Yüksek Aşınma ve Kırılma Direnci</span></div>
+                <div class="spec-row"><span class="spec-label">Kullanım Şekli</span><span class="spec-value">Çevrilerek Kullanılabilir</span></div>
+                <div class="spec-row" style="border:none"><span class="spec-label">Uygulama Alanı</span><span class="spec-value">Geri Dönüşüm, Enerji Santrali, Atık Tesisleri</span></div>
+            </div>
+            <div class="border border-gray-200 rounded-3xl shadow-lg bg-white overflow-hidden cursor-pointer" onclick="openLightbox('karebicak.glb', 'model')">
+                <div class="grid grid-cols-1 md:grid-cols-2 h-[350px] md:h-80">
+                    <div class="relative bg-slate-50 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-center p-6 group">
+                        <img src="bicak1.jpg" alt="Şredder Sabit Büyük Bıçak Fotoğrafı" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
+                        <span class="absolute top-3 left-3 bg-white/70 backdrop-blur-sm text-[#081234] text-[9px] font-black uppercase px-2 py-1 rounded border border-gray-200 tracking-widest shadow-sm">Fotoğraf</span>
+                    </div>
+                    <div class="relative bg-white flex items-center justify-center p-2 group">
+                        <model-viewer 
+                            src="karebicak.glb" 
+                            alt="Şredder Sabit Büyük Bıçak 3D Modeli" 
+                            auto-rotate 
+                            camera-controls 
+                            shadow-intensity="1" 
+                            exposure="1" 
+                            style="width:100%; height:100%; background:transparent;" 
+                            loading="eager">
+                            <div slot="progress-bar" style="display:none;"></div>
+                        </model-viewer>
+                        <span class="absolute top-3 right-3 bg-blue-700/80 backdrop-blur-sm text-white text-[9px] font-black uppercase px-2 py-1 rounded tracking-widest shadow-sm">3D Görünüm</span>
+                        <i class="fa-solid fa-hand-pointer absolute bottom-3 right-3 text-blue-300 text-xl opacity-80 group-hover:opacity-100 transition-opacity"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="bg-[#081234] py-10">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8 text-center text-white">
+                <div data-aos="fade-up">
+                    <div class="text-4xl font-black text-blue-400 mb-2">50+</div>
+                    <div class="text-xs font-bold uppercase tracking-[0.2em] text-white/60">Tamamlanan Proje</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl font-black text-blue-400 mb-2">15+</div>
+                    <div class="text-xs font-bold uppercase tracking-[0.2em] text-white/60">Mutlu Müşteri</div>
+                </div>
+                <div class="col-span-2 md:col-span-1" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl font-black text-blue-400 mb-2">%100</div>
+                    <div class="text-xs font-bold uppercase tracking-[0.2em] text-white/60">Müşteri Memnuniyeti</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-12 container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-10">
+            <h2 class="text-2xl font-black text-blue-700 uppercase tracking-[0.3em] mb-6">NEDEN BİZ?</h2>
+            <p class="text-base text-slate-600 leading-relaxed font-medium italic text-center" data-aos="fade-up">
+                "Sadece parça üretmiyoruz; makinelerinizin ömrünü uzatan, duruş sürelerini minimize eden mühendislik çözümleri sunuyoruz."
+            </p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="feature-card" data-aos="fade-up">
+                <i class="fa-solid fa-microchip text-3xl text-blue-700 mb-6 card-icon" style="transition: color 0.3s ease;"></i>
+                <h3 class="font-black navy-blue mb-4 uppercase text-sm card-title" style="transition: color 0.3s ease;">İleri Teknoloji</h3>
+                <p class="text-xs text-slate-500 leading-relaxed card-text" style="transition: color 0.3s ease;">Modern CNC parkurumuz ve 3D tarama teknolojilerimizle sıfır hata prensibiyle çalışıyoruz.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-gears text-3xl text-blue-700 mb-6 card-icon" style="transition: color 0.3s ease;"></i>
+                <h3 class="font-black navy-blue mb-4 uppercase text-sm card-title" style="transition: color 0.3s ease;">Özel İmalat</h3>
+                <p class="text-xs text-slate-500 leading-relaxed card-text" style="transition: color 0.3s ease;">Standart dışı ölçülerde ve zorlu çalışma koşullarına uygun özel alaşımlı parçalar tasarlıyoruz.</p>
+            </div>
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-medal text-3xl text-blue-700 mb-6 card-icon" style="transition: color 0.3s ease;"></i>
+                <h3 class="font-black navy-blue mb-4 uppercase text-sm card-title" style="transition: color 0.3s ease;">Yüksek Dayanım</h3>
+                <p class="text-xs text-slate-500 leading-relaxed card-text" style="transition: color 0.3s ease;">Önde gelen tüm endüstriyel markaların parçalayıcı bıçak sistemlerinde üstün parça ömrü ve mukavemet sağlıyoruz.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-navy py-6 text-center text-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-xl md:text-2xl font-black uppercase tracking-[0.4em] mb-5">Projeleriniz İçin Çözüm Ortağıyız</h2>
+            <a href="iletisim.html" class="inline-block bg-blue-700 hover:bg-blue-800 text-white px-12 py-3 rounded font-black transition tracking-widest text-xs uppercase">Bizimle İletişime Geçin</a>
+        </div>
+    </section>
+
+    <section class="py-8 bg-white border-t border-gray-100 overflow-hidden">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl font-black text-blue-700 uppercase tracking-[0.3em] mb-6 text-center">REFERANSLARIMIZ</h2>
+            <div class="slider">
+                <div class="slide-track">
+                    <div class="slide"><img src="aktif.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="nature.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="aktif.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="nature.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="aktif.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="nature.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="aktif.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="nature.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="aktif.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="nature.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="aktif.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="nature.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="aktif.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="nature.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="aktif.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                    <div class="slide"><img src="nature.png" style="mix-blend-mode:multiply;" alt="Referans"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#081234] text-white pt-14 pb-6 mt-12">
+        <div class="container mx-auto px-6 max-w-6xl">
+            <div class="grid md:grid-cols-5 gap-8 mb-12">
+                <div>
+                    <div class="flex items-center gap-3 mb-4">
+                        <img src="logo.png" alt="İDM Mühendislik" class="h-12 w-auto" style="mix-blend-mode:screen;">
+                        <span class="text-lg font-black uppercase tracking-tight">İDM Mühendislik</span>
+                    </div>
+                    <p class="text-white/50 text-xs leading-relaxed font-medium">
+                        Ağır sanayi ve geri dönüşüm sektörü için yüksek dayanımlı yedek parça üretimi ve özel mühendislik çözümleri.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Hızlı Linkler</h4>
+                    <ul class="space-y-3">
+                        <li><a href="index.html" class="text-white/70 hover:text-white text-sm font-medium transition">Anasayfa</a></li>
+                        <li><a href="hakkimizda.html" class="text-white/70 hover:text-white text-sm font-medium transition">Hakkımızda</a></li>
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Hizmetlerimiz</a></li>
+                        <li><a href="urunler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Ürünlerimiz</a></li>
+                        <li><a href="iletisim.html" class="text-white/70 hover:text-white text-sm font-medium transition">İletişim</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Hizmetlerimiz</h4>
+                    <ul class="space-y-3">
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Tersine Mühendislik</a></li>
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Tasarım & Proje Üretimi</a></li>
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Yedek Parça İmalatı</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Ürünlerimiz</h4>
+                    <ul class="space-y-3">
+                        <li><a href="urunler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Shredder Bıçak Takımları</a></li>
+                        <li><a href="urunler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Konveyör Rulo İmalatı</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">İletişim</h4>
+                    <ul class="space-y-3" style="list-style:none; padding:0; margin:0;">
+                        <li style="display:grid; grid-template-columns:16px 1fr; gap:10px; align-items:center;">
+                            <i class="fa-solid fa-phone text-blue-500" style="font-size:11px; text-align:center;"></i>
+                            <span class="text-white/70 text-sm font-medium">+90 538 887 60 40</span>
+                        </li>
+                        <li style="display:grid; grid-template-columns:16px 1fr; gap:10px; align-items:center;">
+                            <i class="fa-solid fa-phone text-blue-500" style="font-size:11px; text-align:center;"></i>
+                            <span class="text-white/70 text-sm font-medium">+90 555 105 91 95</span>
+                        </li>
+                        <li style="display:grid; grid-template-columns:16px 1fr; gap:10px; align-items:center;">
+                            <i class="fa-solid fa-envelope text-blue-500" style="font-size:11px; text-align:center;"></i>
+                            <span class="text-white/70 text-sm font-medium lowercase">info@idmmuhendislik.com</span>
+                        </li>
+                        <li style="display:grid; grid-template-columns:16px 1fr; gap:10px; align-items:start;">
+                            <i class="fa-solid fa-location-dot text-blue-500" style="font-size:11px; text-align:center; margin-top:3px;"></i>
+                            <span class="text-white/70 text-sm font-medium">Taşpazar Mah. 21 / Pir Ali Sultan Cad. No: 3/1 Aksaray</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+                <p class="text-white/30 text-[10px] uppercase tracking-[0.3em]">&copy; İDM Mühendislik San. ve Tic. Ltd. Şti.</p>
+                <p class="text-white/30 text-[10px] tracking-[0.1em]">Copyright 2025 © Designed by Serdar ŞEKER</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 1000, once: true });</script>
+
+    <div id="lightbox-modal" class="modal-overlay" onclick="closeLightbox(event)">
+        <i class="fa-solid fa-times" id="close-modal" onclick="closeLightbox(event, true)"></i>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <img id="modal-image" src="" alt="Large Image">
+            <div id="modal-model-container"></div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('lightbox-modal');
+        const modalImage = document.getElementById('modal-image');
+        const modalModelContainer = document.getElementById('modal-model-container');
+
+        function openLightbox(src, type) {
+            // Modal içeriğini sıfırla
+            modalImage.style.display = 'none';
+            modalModelContainer.style.display = 'none';
+            modalModelContainer.innerHTML = ''; // Önceki modeli kaldır
+
+            if (type === 'image') {
+                modalImage.src = src;
+                modalImage.style.display = 'block';
+            } else if (type === 'model') {
+                // Yeni bir model-viewer öğesi oluştur (urunler.html yapısı ile birebir)
+                const newModel = document.createElement('model-viewer');
+                newModel.setAttribute('src', src);
+                newModel.setAttribute('alt', 'Large 3D Model');
+                newModel.setAttribute('camera-controls', '');
+                newModel.setAttribute('auto-rotate', '');
+                newModel.setAttribute('shadow-intensity', '1');
+                newModel.setAttribute('exposure', '1');
+                newModel.setAttribute('loading', 'eager');
+                
+                // Tam boyut
+                newModel.setAttribute('style', 'width:100%; height:100%; background:transparent;');
+                
+                modalModelContainer.appendChild(newModel);
+                modalModelContainer.style.display = 'block';
+            }
+
+            modal.classList.add('open');
+        }
+
+        function closeLightbox(event, forceClose = false) {
+            // Overlay'e veya kapatma ikonuna tıklanırsa kapat
+            if (forceClose || event.target === modal) {
+                modal.classList.remove('open');
+            }
+        }
+    </script>
+
+    <a href="https://wa.me/905551059195" target="_blank" title="Serdar ŞEKER ile WhatsApp'tan İletişim"
+        style="position:fixed; bottom:28px; right:28px; z-index:9999; background-color:#25D366; color:#fff;
+               width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+               box-shadow:0 4px 20px rgba(37,211,102,0.45); transition:transform 0.2s ease, box-shadow 0.2s ease;"
+        onmouseover="this.style.transform='scale(1.12)'; this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 20px rgba(37,211,102,0.45)'">
+        <i class="fa-brands fa-whatsapp" style="font-size:30px;"></i>
+    </a>
+
+</body>
+</html>
