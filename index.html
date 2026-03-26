@@ -52,13 +52,13 @@
         .feature-card:hover .card-title { color: white; }
         .feature-card:hover .card-text { color: #94a3b8; }
 
-        /* Lightbox Stilleri */
+        /* Lightbox Stilleri (Taşma Sorunu Çözüldü) */
         .modal-overlay { position: fixed; inset: 0; background-color: rgba(8, 18, 52, 0.95); z-index: 10000; display: none; align-items: center; justify-content: center; backdrop-filter: blur(5px); opacity: 0; transition: opacity 0.3s ease; }
         .modal-overlay.open { display: flex; opacity: 1; }
-        .modal-content { max-width: 90%; max-height: 90%; background: transparent; overflow: hidden; position: relative; border-radius: 1rem; }
-        #modal-image { max-width: 100%; max-height: 100%; object-contain; display: none; }
+        .modal-content { display: flex; align-items: center; justify-content: center; background: transparent; position: relative; }
+        #modal-image { max-width: 90vw; max-height: 90vh; object-fit: contain; display: none; border-radius: 0.5rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); }
         #modal-model-container { width: 90vw; height: 90vh; max-width: 1200px; max-height: 800px; display: none; background: transparent; }
-        #close-modal { position: absolute; top: 1rem; right: 1rem; font-size: 1.5rem; color: white; cursor: pointer; z-index: 10001; opacity: 0.7; transition: opacity 0.3s ease; }
+        #close-modal { position: absolute; top: 1.5rem; right: 1.5rem; font-size: 2rem; color: white; cursor: pointer; z-index: 10001; opacity: 0.7; transition: opacity 0.3s ease; }
         #close-modal:hover { opacity: 1; }
     </style>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -110,6 +110,7 @@
             }
         });
     </script>
+
     <header class="relative h-[55vh] flex items-center overflow-hidden">
         <img src="bicak3.jpg" class="absolute inset-0 w-full h-full object-cover" alt="İDM Mühendislik İmalat">
         <div class="absolute inset-0 hero-gradient"></div>
@@ -380,7 +381,7 @@
     <div id="lightbox-modal" class="modal-overlay" onclick="closeLightbox(event)">
         <i class="fa-solid fa-times" id="close-modal" onclick="closeLightbox(event, true)"></i>
         <div class="modal-content" onclick="event.stopPropagation()">
-            <img id="modal-image" src="" alt="Large Image">
+            <img id="modal-image" src="" alt="Büyük Resim">
             <div id="modal-model-container"></div>
         </div>
     </div>
@@ -400,7 +401,6 @@
                 modalImage.src = src;
                 modalImage.style.display = 'block';
             } else if (type === 'model') {
-                // Yeni bir model-viewer öğesi oluştur
                 const newModel = document.createElement('model-viewer');
                 newModel.setAttribute('src', src);
                 newModel.setAttribute('alt', 'Large 3D Model');
@@ -409,12 +409,9 @@
                 newModel.setAttribute('shadow-intensity', '1');
                 newModel.setAttribute('exposure', '1');
                 newModel.setAttribute('loading', 'eager');
-                
-                // Tam boyut ve sıkı sınırlar (CAD/SolidWorks modelleri için tam sığdırma)
                 newModel.setAttribute('bounds', 'tight');
                 newModel.setAttribute('style', 'width:100%; height:100%; background:transparent;');
                 
-                // Eager loading progres barını gizle
                 const progressBar = document.createElement('div');
                 progressBar.setAttribute('slot', 'progress-bar');
                 progressBar.setAttribute('style', 'display:none;');
@@ -428,7 +425,6 @@
         }
 
         function closeLightbox(event, forceClose = false) {
-            // Overlay'e veya kapatma ikonuna tıklanırsa kapat
             if (forceClose || event.target === modal) {
                 modal.classList.remove('open');
             }
