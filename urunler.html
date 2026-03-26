@@ -37,7 +37,6 @@
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
 
-    <!-- NAV -->
     <nav class="bg-white border-b border-gray-200 px-6 py-3 flex justify-between items-center sticky top-0 z-50 shadow-sm">
         <div class="flex items-center">
             <a href="index.html" class="flex items-center gap-3">
@@ -86,12 +85,10 @@
         });
     </script>
 
-    <!-- HEADER -->
     <header class="bg-navy py-8 text-white text-center">
         <h1 class="text-[24px] font-black uppercase tracking-[0.4em]">Ürünlerimiz</h1>
     </header>
 
-    <!-- GİRİŞ -->
     <section class="py-14 container mx-auto px-6 max-w-5xl text-center">
         <div class="max-w-3xl mx-auto mb-6">
             <h2 class="text-2xl font-black text-blue-700 uppercase tracking-[0.3em] mb-6">ÜRÜNLERİMİZ</h2>
@@ -101,11 +98,9 @@
         </div>
     </section>
 
-    <!-- ÜRÜN 1 -->
     <section class="pb-16 container mx-auto px-6 max-w-6xl">
         <div class="product-card cursor-pointer" data-aos="fade-up" onclick="openModal1()">
             <div class="flex flex-col md:flex-row" style="height:320px; overflow:hidden;">
-                <!-- Sol: Bilgi -->
                 <div class="p-8 flex flex-col text-left md:w-1/2" style="max-height:320px; overflow:hidden;">
                     <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">Ürün 01</span>
                     <h2 class="text-xl font-black navy-blue uppercase mb-4">Shredder Bıçak<br><span class="text-blue-700">Takımları</span></h2>
@@ -121,7 +116,6 @@
                         <i class="fa-solid fa-circle-info text-xs"></i> Detaylı Bilgi
                     </button>
                 </div>
-                <!-- Sağ: Slider -->
                 <div class="relative overflow-hidden md:w-1/2" style="height:320px;">
                     <div class="flex h-full transition-transform duration-500 ease-in-out" id="slider1-track" style="height:100%; position:absolute; width:100%;">
                         <img src="bicak1.jpg" class="flex-shrink-0 object-cover cursor-zoom-in" style="width:100%; height:100%; flex-shrink:0;" alt="Bıçak 1" onclick="openLightbox(this.src)">
@@ -144,11 +138,9 @@
         </div>
     </section>
 
-    <!-- ÜRÜN 2 -->
     <section class="pb-16 container mx-auto px-6 max-w-6xl">
         <div class="product-card cursor-pointer" data-aos="fade-up" onclick="openModal2()">
             <div class="flex flex-col md:flex-row" style="height:380px;">
-                <!-- Sol: Slider -->
                 <div class="relative overflow-hidden order-2 md:order-1 md:w-1/2" style="height:380px;">
                     <div class="flex h-full transition-transform duration-500 ease-in-out" id="slider2-track" style="height:100%; position:absolute; width:100%;">
                         <img src="rulo1.jpg" class="flex-shrink-0 object-cover cursor-zoom-in" style="width:100%; height:100%; flex-shrink:0;" alt="Rulo 1" onclick="openLightbox(this.src)">
@@ -165,7 +157,6 @@
                         <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> Büyüt
                     </div>
                 </div>
-                <!-- Sağ: Bilgi -->
                 <div class="p-8 pt-6 flex flex-col text-left order-1 md:order-2 md:w-1/2" style="height:380px; overflow:hidden;">
                     <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-4 border-l-4 border-blue-700 pl-3">Ürün 02</span>
                     <h2 class="text-2xl font-black navy-blue uppercase mb-5">Konveyör<br><span class="text-blue-700">Rulo İmalatı</span></h2>
@@ -185,7 +176,6 @@
         </div>
     </section>
 
-    <!-- CTA -->
     <section class="bg-navy py-6 text-center text-white mb-0">
         <div class="container mx-auto px-6">
             <h2 class="text-xl md:text-2xl font-black uppercase tracking-[0.4em] mb-5">Özel Ürün mü Arıyorsunuz?</h2>
@@ -194,27 +184,21 @@
         </div>
     </section>
 
-
-    <!-- Modal: Shredder Bıçak Takımları -->
     <div id="modal1" onclick="closeModal1()" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9998; align-items:center; justify-content:center; padding:20px;">
         <div onclick="event.stopPropagation()" style="background:white; border-radius:16px; max-width:700px; width:100%; max-height:90vh; overflow-y:auto; position:relative;">
-            <!-- Kapat butonu -->
             <button onclick="closeModal1()" style="position:absolute; top:16px; right:20px; background:none; border:none; cursor:pointer; font-size:1.5rem; color:#64748b; line-height:1;">&times;</button>
 
-            <!-- Üst başlık -->
             <div style="background:#081234; border-radius:16px 16px 0 0; padding:28px 32px;">
                 <span style="font-size:10px; font-weight:800; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:.2em;">Ürün 01</span>
                 <h2 style="font-size:22px; font-weight:900; color:white; text-transform:uppercase; margin-top:6px;">Shredder Bıçak <span style="color:#60a5fa;">Takımları</span></h2>
             </div>
 
             <div style="padding:32px;">
-                <!-- Açıklama -->
                 <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Ürün Hakkında</h3>
                 <p style="font-size:13px; color:#475569; line-height:1.8; margin-bottom:24px;">
                     Shredder bıçak takımlarımız, geri dönüşüm tesisleri, enerji santralleri ve ağır sanayi tesislerinde kullanılan parçalayıcı makineler için özel olarak üretilmektedir. Dövme çelik yöntemiyle imal edilen bıçaklarımız, yüksek darbe ve aşınma direnci sayesinde zorlu çalışma koşullarında üstün performans sergiler. Her 4 köşesi de kesici yüzey olarak kullanılabildiğinden, bıçak takımı döndürülerek kullanılabilir; bu sayede parça başına maliyet önemli ölçüde düşer ve kullanım ömrü uzar. Standart ölçülerin yanı sıra müşteri talebine göre özel boyutlarda da üretim gerçekleştirilmektedir.
                 </p>
 
-                <!-- Teknik Özellikler -->
                 <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Teknik Özellikler</h3>
                 <table style="width:100%; border-collapse:collapse; font-size:13px; margin-bottom:28px;">
                     <tr style="background:#f1f5f9;">
@@ -239,7 +223,6 @@
                     </tr>
                 </table>
 
-                <!-- CTA -->
                 <a href="iletisim.html" style="display:inline-flex; align-items:center; gap:8px; background:#1d4ed8; color:white; padding:12px 28px; border-radius:6px; font-weight:900; font-size:11px; text-transform:uppercase; letter-spacing:.15em; text-decoration:none;">
                     Teklif Al <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
                 </a>
@@ -247,8 +230,6 @@
         </div>
     </div>
 
-
-    <!-- Modal: Konveyör Rulo İmalatı -->
     <div id="modal2" onclick="closeModal2()" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9998; align-items:center; justify-content:center; padding:20px;">
         <div onclick="event.stopPropagation()" style="background:white; border-radius:16px; max-width:700px; width:100%; max-height:90vh; overflow-y:auto; position:relative;">
             <button onclick="closeModal2()" style="position:absolute; top:16px; right:20px; background:none; border:none; cursor:pointer; font-size:1.5rem; color:#64748b; line-height:1;">&times;</button>
@@ -277,7 +258,6 @@
                     </tr>
                 </table>
 
-                <!-- Fotoğraf Galerisi -->
                 <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Ürün Görselleri</h3>
                 <div style="position:relative; overflow:hidden; border-radius:10px; margin-bottom:28px;" id="m2gallery-wrap">
                     <div id="m2gallery-track" style="display:flex; transition:transform 0.5s ease; height:220px;">
@@ -302,68 +282,12 @@
         </div>
     </div>
 
-    <!-- Lightbox -->
     <div id="lightbox" onclick="closeLightbox()">
         <button onclick="closeLightbox()" style="position:absolute;top:20px;right:28px;color:white;font-size:2rem;font-weight:900;background:none;border:none;cursor:pointer;">&times;</button>
         <img id="lightbox-img" src="" onclick="event.stopPropagation()">
     </div>
 
-    <!-- FOOTER -->
-    
-    <!-- 3D ÜRÜN GÖRÜNTÜLEYİCİ -->
-    <section class="py-16 bg-slate-50 border-t border-gray-200">
-        <div class="container mx-auto px-6 max-w-6xl">
-            <div class="text-center mb-10" data-aos="fade-up">
-                <h2 class="text-2xl font-black text-blue-700 uppercase tracking-[0.3em] mb-3">3D ÜRÜN MODELİ</h2>
-                <p class="text-slate-500 text-sm font-medium">Modeli mouse ile döndürerek her açıdan inceleyebilirsiniz.</p>
-            </div>
-            <div class="grid md:grid-cols-2 gap-10 items-center max-w-5xl mx-auto" data-aos="fade-up">
-                <!-- 3D Viewer -->
-                <div class="rounded-2xl overflow-hidden shadow-2xl border border-gray-200 bg-white" style="height:420px;">
-                    <model-viewer
-                        src="elmas_kesici_serdar.glb"
-                        alt="Elmas Kesici Bıçak 3D Model"
-                        auto-rotate
-                        camera-controls
-                        shadow-intensity="1"
-                        exposure="1"
-                        style="width:100%; height:100%; background:#f8fafc;"
-                        loading="eager">
-                        <div slot="progress-bar" style="display:none;"></div>
-                    </model-viewer>
-                </div>
-                <!-- Açıklama -->
-                <div class="space-y-5">
-                    <h3 class="text-xl font-black navy-blue uppercase tracking-[0.2em]">Elmas Kesici Bıçak</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed font-medium">
-                        Yüksek aşınma direncine sahip özel alaşımlı çelikten üretilen elmas kesici bıçaklarımız, 
-                        geri dönüşüm tesisleri ve ağır sanayi uygulamaları için tasarlanmıştır.
-                    </p>
-                    <ul class="space-y-2">
-                        <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                            <i class="fa-solid fa-check text-blue-700 text-xs"></i> Özel alaşımlı yüksek dayanımlı çelik
-                        </li>
-                        <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                            <i class="fa-solid fa-check text-blue-700 text-xs"></i> Tüm marka shredder'larla uyumlu
-                        </li>
-                        <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                            <i class="fa-solid fa-check text-blue-700 text-xs"></i> CNC işleme ile sıfır tolerans
-                        </li>
-                        <li class="flex items-center gap-3 text-sm font-medium text-slate-700">
-                            <i class="fa-solid fa-check text-blue-700 text-xs"></i> Uzun ömürlü, minimum bakım
-                        </li>
-                    </ul>
-                    <a href="iletisim.html" class="inline-flex items-center gap-2 bg-[#081234] hover:bg-blue-700 text-white font-black uppercase tracking-[0.2em] text-xs px-6 py-3 rounded-xl transition-all duration-300 shadow-lg">
-                        <i class="fa-solid fa-paper-plane"></i> Teklif Al
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
-
-<footer class="bg-[#081234] text-white pt-14 pb-6 mt-0">
+    <footer class="bg-[#081234] text-white pt-14 pb-6 mt-0">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="grid md:grid-cols-5 gap-8 mb-12">
                 <div>
@@ -461,8 +385,6 @@
         function s2Move(dir){s2go((s2cur+dir+s2tot)%s2tot);}
         setInterval(()=>s2Move(1),4000);
 
-
-
         function openModal2() {
             const m = document.getElementById('modal2');
             m.style.display = 'flex';
@@ -511,7 +433,6 @@
         document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeLightbox();});
     </script>
 
-    <!-- WhatsApp Sabit Butonu -->
     <a href="https://wa.me/905551059195" target="_blank" title="Serdar ŞEKER ile WhatsApp'tan İletişim"
         style="position:fixed; bottom:28px; right:28px; z-index:9999; background-color:#25D366; color:#fff;
                width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center;
