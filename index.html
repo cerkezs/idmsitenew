@@ -110,6 +110,7 @@
             }
         });
     </script>
+
     <header class="relative h-[55vh] flex items-center overflow-hidden">
         <img src="bicak3.jpg" class="absolute inset-0 w-full h-full object-cover" alt="İDM Mühendislik İmalat">
         <div class="absolute inset-0 hero-gradient"></div>
@@ -152,19 +153,21 @@
             
             <div class="border border-gray-200 rounded-3xl shadow-lg bg-white overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2 h-[350px] md:h-80">
+                    
                     <div class="relative bg-slate-50 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-center p-6 group">
                         <img src="bicak1.jpg" alt="Şredder Hareketli Bıçak Fotoğrafı" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-white/70 backdrop-blur-sm text-[#081234] text-[9px] font-black uppercase px-2 py-1 rounded border border-gray-200 tracking-widest shadow-sm z-10">Fotoğraf</span>
+                        <span class="absolute top-3 left-3 bg-white/70 backdrop-blur-sm text-[#081234] text-[9px] font-black uppercase px-2 py-1 rounded border border-gray-200 tracking-widest shadow-sm z-10">FOTOĞRAF</span>
                         
-                        <button style="position: absolute; bottom: 16px; right: 16px; z-index: 50; background-color: #1d4ed8; color: white; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; padding: 8px 16px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 6px; cursor: pointer; border: none;" onclick="openLightbox('bicak1.jpg', 'image')">
+                        <button class="absolute bottom-4 right-4 z-[60] bg-blue-700 hover:bg-blue-800 text-white text-[11px] font-black uppercase tracking-widest px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 transition-transform hover:scale-105 cursor-pointer" onclick="openLightbox('bicak1.jpg', 'image')">
                             <i class="fa-solid fa-magnifying-glass-plus"></i> BÜYÜT
                         </button>
                     </div>
+                    
                     <div class="relative bg-white flex items-center justify-center p-2 group">
                         <model-viewer src="karebicak.glb" alt="Şredder Kare Bıçak 3D Modeli" auto-rotate camera-controls shadow-intensity="1" exposure="1" bounds="tight" style="width:100%; height:100%; background:transparent;" loading="eager"><div slot="progress-bar" style="display:none;"></div></model-viewer>
-                        <span class="absolute top-3 right-3 bg-blue-700/80 backdrop-blur-sm text-white text-[9px] font-black uppercase px-2 py-1 rounded tracking-widest shadow-sm z-10">3D Görünüm</span>
+                        <span class="absolute top-3 right-3 bg-blue-700/80 backdrop-blur-sm text-white text-[9px] font-black uppercase px-2 py-1 rounded tracking-widest shadow-sm z-10">3D GÖRÜNÜM</span>
                         
-                        <button style="position: absolute; bottom: 16px; left: 16px; z-index: 50; background-color: #1d4ed8; color: white; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; padding: 8px 16px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 6px; cursor: pointer; border: none;" onclick="openLightbox('karebicak.glb', 'model')">
+                        <button class="absolute bottom-4 left-4 z-[60] bg-blue-700 hover:bg-blue-800 text-white text-[11px] font-black uppercase tracking-widest px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 transition-transform hover:scale-105 cursor-pointer" onclick="openLightbox('karebicak.glb', 'model')">
                             <i class="fa-solid fa-magnifying-glass-plus"></i> BÜYÜT
                         </button>
                     </div>
@@ -175,19 +178,21 @@
         <div class="grid md:grid-cols-2 gap-12 items-center mb-24" data-aos="fade-up">
             <div class="border border-gray-200 rounded-3xl shadow-lg bg-white overflow-hidden order-2 md:order-1">
                 <div class="grid grid-cols-1 md:grid-cols-2 h-[350px] md:h-80">
+                    
                     <div class="relative bg-slate-50 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-center p-6 group">
                         <img src="bicak1.jpg" alt="Şredder Sabit Küçük Bıçak Fotoğrafı" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-white/70 backdrop-blur-sm text-[#081234] text-[9px] font-black uppercase px-2 py-1 rounded border border-gray-200 tracking-widest shadow-sm z-10">Fotoğraf</span>
+                        <span class="absolute top-3 left-3 bg-white/70 backdrop-blur-sm text-[#081234] text-[9px] font-black uppercase px-2 py-1 rounded border border-gray-200 tracking-widest shadow-sm z-10">FOTOĞRAF</span>
                         
-                        <button style="position: absolute; bottom: 16px; right: 16px; z-index: 50; background-color: #1d4ed8; color: white; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; padding: 8px 16px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 6px; cursor: pointer; border: none;" onclick="openLightbox('bicak1.jpg', 'image')">
+                        <button class="absolute bottom-4 right-4 z-[60] bg-blue-700 hover:bg-blue-800 text-white text-[11px] font-black uppercase tracking-widest px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 transition-transform hover:scale-105 cursor-pointer" onclick="openLightbox('bicak1.jpg', 'image')">
                             <i class="fa-solid fa-magnifying-glass-plus"></i> BÜYÜT
                         </button>
                     </div>
+                    
                     <div class="relative bg-white flex items-center justify-center p-2 group">
                         <model-viewer src="sabitkucuk.glb" alt="Şredder Sabit Küçük Bıçak 3D Modeli" auto-rotate camera-controls shadow-intensity="1" exposure="1" bounds="tight" style="width:100%; height:100%; background:transparent;" loading="eager"><div slot="progress-bar" style="display:none;"></div></model-viewer>
-                        <span class="absolute top-3 right-3 bg-blue-700/80 backdrop-blur-sm text-white text-[9px] font-black uppercase px-2 py-1 rounded tracking-widest shadow-sm z-10">3D Görünüm</span>
+                        <span class="absolute top-3 right-3 bg-blue-700/80 backdrop-blur-sm text-white text-[9px] font-black uppercase px-2 py-1 rounded tracking-widest shadow-sm z-10">3D GÖRÜNÜM</span>
                         
-                        <button style="position: absolute; bottom: 16px; left: 16px; z-index: 50; background-color: #1d4ed8; color: white; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; padding: 8px 16px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 6px; cursor: pointer; border: none;" onclick="openLightbox('sabitkucuk.glb', 'model')">
+                        <button class="absolute bottom-4 left-4 z-[60] bg-blue-700 hover:bg-blue-800 text-white text-[11px] font-black uppercase tracking-widest px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 transition-transform hover:scale-105 cursor-pointer" onclick="openLightbox('sabitkucuk.glb', 'model')">
                             <i class="fa-solid fa-magnifying-glass-plus"></i> BÜYÜT
                         </button>
                     </div>
@@ -214,19 +219,21 @@
             </div>
             <div class="border border-gray-200 rounded-3xl shadow-lg bg-white overflow-hidden">
                 <div class="grid grid-cols-1 md:grid-cols-2 h-[350px] md:h-80">
+                    
                     <div class="relative bg-slate-50 border-b md:border-b-0 md:border-r border-gray-200 flex items-center justify-center p-6 group">
                         <img src="bicak1.jpg" alt="Şredder Sabit Büyük Bıçak Fotoğrafı" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-white/70 backdrop-blur-sm text-[#081234] text-[9px] font-black uppercase px-2 py-1 rounded border border-gray-200 tracking-widest shadow-sm z-10">Fotoğraf</span>
+                        <span class="absolute top-3 left-3 bg-white/70 backdrop-blur-sm text-[#081234] text-[9px] font-black uppercase px-2 py-1 rounded border border-gray-200 tracking-widest shadow-sm z-10">FOTOĞRAF</span>
                         
-                        <button style="position: absolute; bottom: 16px; right: 16px; z-index: 50; background-color: #1d4ed8; color: white; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; padding: 8px 16px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 6px; cursor: pointer; border: none;" onclick="openLightbox('bicak1.jpg', 'image')">
+                        <button class="absolute bottom-4 right-4 z-[60] bg-blue-700 hover:bg-blue-800 text-white text-[11px] font-black uppercase tracking-widest px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 transition-transform hover:scale-105 cursor-pointer" onclick="openLightbox('bicak1.jpg', 'image')">
                             <i class="fa-solid fa-magnifying-glass-plus"></i> BÜYÜT
                         </button>
                     </div>
+                    
                     <div class="relative bg-white flex items-center justify-center p-2 group">
                         <model-viewer src="sabitbuyuk.glb" alt="Şredder Sabit Büyük Bıçak 3D Modeli" auto-rotate camera-controls shadow-intensity="1" exposure="1" bounds="tight" style="width:100%; height:100%; background:transparent;" loading="eager"><div slot="progress-bar" style="display:none;"></div></model-viewer>
-                        <span class="absolute top-3 right-3 bg-blue-700/80 backdrop-blur-sm text-white text-[9px] font-black uppercase px-2 py-1 rounded tracking-widest shadow-sm z-10">3D Görünüm</span>
+                        <span class="absolute top-3 right-3 bg-blue-700/80 backdrop-blur-sm text-white text-[9px] font-black uppercase px-2 py-1 rounded tracking-widest shadow-sm z-10">3D GÖRÜNÜM</span>
                         
-                        <button style="position: absolute; bottom: 16px; left: 16px; z-index: 50; background-color: #1d4ed8; color: white; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 1px; padding: 8px 16px; border-radius: 50px; box-shadow: 0 4px 6px rgba(0,0,0,0.3); display: flex; align-items: center; gap: 6px; cursor: pointer; border: none;" onclick="openLightbox('sabitbuyuk.glb', 'model')">
+                        <button class="absolute bottom-4 left-4 z-[60] bg-blue-700 hover:bg-blue-800 text-white text-[11px] font-black uppercase tracking-widest px-4 py-2.5 rounded-full shadow-xl flex items-center gap-2 transition-transform hover:scale-105 cursor-pointer" onclick="openLightbox('sabitbuyuk.glb', 'model')">
                             <i class="fa-solid fa-magnifying-glass-plus"></i> BÜYÜT
                         </button>
                     </div>
