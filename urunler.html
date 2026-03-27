@@ -301,4 +301,146 @@
                     <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Hızlı Linkler</h4>
                     <ul class="space-y-3">
                         <li><a href="index.html" class="text-white/70 hover:text-white text-sm font-medium transition">Anasayfa</a></li>
-                        <li><a href="hakkimizda.
+                        <li><a href="hakkimizda.html" class="text-white/70 hover:text-white text-sm font-medium transition">Hakkımızda</a></li>
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Hizmetlerimiz</a></li>
+                        <li><a href="urunler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Ürünlerimiz</a></li>
+                        <li><a href="iletisim.html" class="text-white/70 hover:text-white text-sm font-medium transition">İletişim</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Hizmetlerimiz</h4>
+                    <ul class="space-y-3">
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Tersine Mühendislik</a></li>
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Tasarım & Proje Üretimi</a></li>
+                        <li><a href="hizmetler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Yedek Parça İmalatı</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">Ürünlerimiz</h4>
+                    <ul class="space-y-3">
+                        <li><a href="urunler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Shredder Bıçak Takımları</a></li>
+                        <li><a href="urunler.html" class="text-white/70 hover:text-white text-sm font-medium transition">Konveyör Rulo İmalatı</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-xs font-black uppercase tracking-[0.2em] text-white/40 mb-5">İletişim</h4>
+                    <ul class="space-y-3" style="list-style:none;padding:0;margin:0;">
+                        <li style="display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:center;">
+                            <i class="fa-solid fa-phone text-blue-500" style="font-size:11px;text-align:center;"></i>
+                            <span class="text-white/70 text-sm font-medium">+90 538 887 60 40</span>
+                        </li>
+                        <li style="display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:center;">
+                            <i class="fa-solid fa-phone text-blue-500" style="font-size:11px;text-align:center;"></i>
+                            <span class="text-white/70 text-sm font-medium">+90 555 105 91 95</span>
+                        </li>
+                        <li style="display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:center;">
+                            <i class="fa-solid fa-envelope text-blue-500" style="font-size:11px;text-align:center;"></i>
+                            <span class="text-white/70 text-sm font-medium lowercase">info@idmmuhendislik.com</span>
+                        </li>
+                        <li style="display:grid;grid-template-columns:16px 1fr;gap:10px;align-items:start;">
+                            <i class="fa-solid fa-location-dot text-blue-500" style="font-size:11px;text-align:center;margin-top:3px;"></i>
+                            <span class="text-white/70 text-sm font-medium">Taşpazar Mah. 21 / Pir Ali Sultan Cad. No: 3/1 Aksaray</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+                <p class="text-white/30 text-[10px] uppercase tracking-[0.3em]">&copy; İDM Mühendislik San. ve Tic. Ltd. Şti.</p>
+                <p class="text-white/30 text-[10px] tracking-[0.1em]">Copyright 2025 © Designed by Serdar ŞEKER</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Slider 1
+        let s1cur = 0, s1tot = 4;
+        const s1track = document.getElementById('slider1-track');
+        const s1dots = document.getElementById('s1-dots');
+        for(let i=0;i<s1tot;i++){
+            const d=document.createElement('button');
+            d.className='dot-btn';
+            d.style.background=i===0?'white':'rgba(255,255,255,0.4)';
+            d.onclick=(e)=>{e.stopPropagation();s1go(i);};
+            s1dots.appendChild(d);
+        }
+        function s1go(n){s1cur=n;s1track.style.transform=`translateX(-${n*100}%)`;s1dots.querySelectorAll('button').forEach((d,i)=>d.style.background=i===n?'white':'rgba(255,255,255,0.4)');}
+        function s1Move(dir){s1go((s1cur+dir+s1tot)%s1tot);}
+        setInterval(()=>s1Move(1),3500);
+
+        // Slider 2
+        let s2cur=0,s2tot=2;
+        const s2track=document.getElementById('slider2-track');
+        const s2dots=document.getElementById('s2-dots');
+        for(let i=0;i<s2tot;i++){
+            const d=document.createElement('button');
+            d.className='dot-btn';
+            d.style.background=i===0?'white':'rgba(255,255,255,0.4)';
+            d.onclick=(e)=>{e.stopPropagation();s2go(i);};
+            s2dots.appendChild(d);
+        }
+        function s2go(n){s2cur=n;s2track.style.transform=`translateX(-${n*100}%)`;s2dots.querySelectorAll('button').forEach((d,i)=>d.style.background=i===n?'white':'rgba(255,255,255,0.4)');}
+        function s2Move(dir){s2go((s2cur+dir+s2tot)%s2tot);}
+        setInterval(()=>s2Move(1),4000);
+
+        function openModal2() {
+            const m = document.getElementById('modal2');
+            m.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            // Galeri dots oluştur
+            const dots = document.getElementById('m2gallery-dots');
+            if(dots && dots.children.length === 0) {
+                for(let i=0; i<2; i++){
+                    const d = document.createElement('button');
+                    d.style.cssText = 'width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;background:' + (i===0?'white':'rgba(255,255,255,0.4)');
+                    d.onclick = (e) => { e.stopPropagation(); m2GalleryGo(i); };
+                    dots.appendChild(d);
+                }
+            }
+        }
+        function closeModal2() {
+            document.getElementById('modal2').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // Modal 2 galeri
+        let m2cur = 0, m2tot = 2;
+        function m2GalleryGo(n) {
+            m2cur = n;
+            document.getElementById('m2gallery-track').style.transform = `translateX(-${n*100}%)`;
+            const dots = document.getElementById('m2gallery-dots');
+            if(dots) dots.querySelectorAll('button').forEach((d,i) => d.style.background = i===n ? 'white' : 'rgba(255,255,255,0.4)');
+        }
+        function m2GalleryMove(dir) { m2GalleryGo((m2cur+dir+m2tot)%m2tot); }
+        setInterval(() => { if(document.getElementById('modal2').style.display === 'flex') m2GalleryMove(1); }, 3500);
+        function openModal1() {
+            const m = document.getElementById('modal1');
+            m.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal1() {
+            document.getElementById('modal1').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', (e) => {
+            if(e.key === 'Escape') { closeModal1(); closeModal2(); closeLightbox(); }
+        });
+        // Lightbox
+        function openLightbox(src){document.getElementById('lightbox-img').src=src;document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}
+        function closeLightbox(){document.getElementById('lightbox').classList.remove('open');document.body.style.overflow='';}
+        document.addEventListener('keydown',(e)=>{if(e.key==='Escape')closeLightbox();});
+    </script>
+
+    <a href="https://wa.me/905551059195" target="_blank" title="Serdar ŞEKER ile WhatsApp'tan İletişim"
+        style="position:fixed; bottom:28px; right:28px; z-index:9999; background-color:#25D366; color:#fff;
+               width:58px; height:58px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+               box-shadow:0 4px 20px rgba(37,211,102,0.45); transition:transform 0.2s ease, box-shadow 0.2s ease;"
+        onmouseover="this.style.transform='scale(1.12)'; this.style.boxShadow='0 6px 28px rgba(37,211,102,0.6)'"
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 20px rgba(37,211,102,0.45)'">
+        <i class="fa-brands fa-whatsapp" style="font-size:30px;"></i>
+    </a>
+
+</body>
+</html>
