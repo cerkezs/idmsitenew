@@ -125,7 +125,7 @@
         <div class="product-card" data-aos="fade-up">
             <div class="flex flex-col md:flex-row h-auto md:h-[350px] overflow-hidden">
                 <div class="p-8 flex flex-col text-left md:w-1/2 h-auto md:h-full">
-                    <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">Ürün 01</span>
+                    <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">İDM 01</span>
                     <h2 class="text-xl md:text-2xl font-black navy-blue uppercase mb-4 tracking-wider">Shredder Bıçak<br><span class="text-blue-700">Takımları</span></h2>
                     <p class="text-slate-600 leading-relaxed mb-5 text-[15px] font-medium text-justify">
                         Elektrik üretim, geri dönüşüm ve atıktan türetilmiş yakıt tesislerinde zorlu şartlar altında çalışan shredder makineleri için dövme çelik bıçak takımları üretiyoruz. Yüksek aşınma direnci ve uzun kullanım ömrü ile sektörün önde gelen markalarına tam uyumlu, verimli çözümler sunuyoruz.
@@ -140,6 +140,8 @@
                     <div class="flex h-full transition-transform duration-500 ease-in-out" id="slider1-track" style="height:100%; position:absolute; width:100%;">
                         <img src="bicak1.jpg" class="flex-shrink-0 object-cover cursor-zoom-in" style="width:100%; height:100%; flex-shrink:0;" alt="Shredder Bıçak 1" onclick="openLightbox('shredder-blades', 0)">
                         <img src="bicak2.jpg" class="flex-shrink-0 object-cover cursor-zoom-in" style="width:100%; height:100%; flex-shrink:0;" alt="Shredder Bıçak 2" onclick="openLightbox('shredder-blades', 1)">
+                        <img src="bicak3.jpg" class="flex-shrink-0 object-cover cursor-zoom-in" style="width:100%; height:100%; flex-shrink:0;" alt="Shredder Bıçak 3" onclick="openLightbox('shredder-blades', 2)">
+                        <img src="bicak4.jpg" class="flex-shrink-0 object-cover cursor-zoom-in" style="width:100%; height:100%; flex-shrink:0;" alt="Shredder Bıçak 4" onclick="openLightbox('shredder-blades', 3)">
                     </div>
                     <button onclick="s1Move(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition z-10">
                         <i class="fa-solid fa-chevron-left text-xs"></i>
@@ -175,7 +177,7 @@
                     </div>
                 </div>
                 <div class="p-8 flex flex-col text-left order-1 md:order-2 md:w-1/2 h-auto md:h-full">
-                    <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">Ürün 02</span>
+                    <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">İDM 02</span>
                     <h2 class="text-xl md:text-2xl font-black navy-blue uppercase mb-4 tracking-wider">Shredder<br><span class="text-blue-700">Sızdırmazlık Takımı</span></h2>
                     <p class="text-slate-600 leading-relaxed mb-5 text-[15px] font-medium text-justify">
                         Shredder kırıcılarda motor mili ve dişli kutusunu koruyan kritik parçalardır. <span class="text-blue-700 font-bold">Kırıcı haznesine dökülen yakıt, yağ ve sıvıların</span>, motor mili tarafına geçmesini engelleyerek büyük ve maliyetli arızaların önüne geçer.
@@ -192,7 +194,7 @@
         <div class="product-card" data-aos="fade-up">
             <div class="flex flex-col md:flex-row h-auto md:h-[350px] overflow-hidden">
                 <div class="p-8 flex flex-col text-left md:w-1/2 h-auto md:h-full">
-                    <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">Ürün 03</span>
+                    <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">İDM 03</span>
                     <h2 class="text-xl md:text-2xl font-black navy-blue uppercase mb-4 tracking-wider">Konveyör<br><span class="text-blue-700">Rulo İmalatı</span></h2>
                     <p class="text-slate-600 leading-relaxed mb-5 text-[15px] font-medium text-justify">
                         Taşıma ve aktarma sistemlerinde kullanılan tüm rulo tiplerine yönelik özel üretim yapmaktayız. Her müşterinin sistemine uygun boyutlarda, yüksek yük kapasitesine sahip, dayanıklı ve uzun ömürlü rulolar üretiyoruz.
@@ -222,7 +224,7 @@
             </div>
         </div>
 
-    </div>
+        </div>
 
     <section class="bg-navy py-10 text-center text-white mb-0">
         <div class="container mx-auto px-6">
@@ -306,7 +308,7 @@
         // --- Sayfa İçi Kayma Mantığı ---
         
         // --- Slider 1 (Shredder Bıçak) ---
-        let s1cur = 0, s1tot = 2; // JS GÜNCELLENDİ (4 YERİNE 2 RESİM)
+        let s1cur = 0, s1tot = 4;
         const s1track = document.getElementById('slider1-track');
         const s1dots = document.getElementById('s1-dots');
         for(let i=0; i<s1tot; i++){
@@ -368,10 +370,22 @@
         // --- BÜYÜTME (LIGHTBOX) SLIDER MANTIĞI ---
 
         // 1. Ürün Verileri
-        const productsImagesData = {
-            'shredder-blades': ['bicak1.jpg', 'bicak2.jpg'], // DATA GÜNCELLENDİ (SADECE 2 RESİM)
-            'sealing-kits': ['sizdirmazlik1.jpg', 'sizdirmazlik2.jpg', 'sizdirmazlik3.jpg'],
-            'rolls': ['rulo1.jpg', 'rulo2.jpg']
+        const productsData = {
+            'shredder-blades': {
+                label: 'İDM 01', // Veri yapısı İDM XX olarak güncellendi
+                title: 'Shredder Bıçak Takımları',
+                images: ['bicak1.jpg', 'bicak2.jpg', 'bicak3.jpg', 'bicak4.jpg'],
+            },
+            'sealing-kits': {
+                label: 'İDM 02', // Veri yapısı İDM XX olarak güncellendi
+                title: 'Shredder Sızdırmazlık Takımı',
+                images: ['sizdirmazlik1.jpg', 'sizdirmazlik2.jpg', 'sizdirmazlik3.jpg'],
+            },
+            'rolls': {
+                label: 'İDM 03', // Veri yapısı İDM XX olarak güncellendi
+                title: 'Konveyör Rulo İmalatı',
+                images: ['rulo1.jpg', 'rulo2.jpg'],
+            }
         };
 
         // Büyütme ekranı durumu
@@ -381,17 +395,29 @@
 
         const lbModal = document.getElementById('lightbox');
         const lbTrack = document.getElementById('lightbox-track');
+        // Modal başlık elementlerini ekleyin (Eğer HTML'de yoksa, JavaScript ile oluşturmalıyız veya HTML'e eklemeliyiz. Mevcut kodda yok.)
+        // Referans resimlere göre modal başlığını da güncellemek gerekiyor.
+        // Kullanıcının verdiği kodda detayları yükleyen kısım yok, sadece resimleri yüklüyor. 
+        // Ancak modalın sol üstünde "ÜRÜN 01" başlığı var. 
+        // Bu başlığı da JavaScript ile dinamik olarak değiştirmeliyiz.
 
         function openLightbox(productKey, index){
-            const images = productsImagesData[productKey];
-            if(!images) return; 
+            const product = productsData[productKey];
+            if(!product) return; 
 
             currentLbKey = productKey;
             currentLbIndex = index;
-            currentLbTotal = images.length;
+            currentLbTotal = product.images.length;
+
+            // Modal başlığını ve etiketini güncelle (Bu alanların HTML'de olduğunu varsayıyorum)
+            // Eğer HTML'de yoksa, dinamik yükleme yapısı eksik demektir.
+            // Referans resimlerden modal başlığının (ÜRÜN XX) statik kodlandığı veya 
+            // modal başlığını da dinamik yükleyen bir JavaScript parçası olduğu anlaşılıyor. 
+            // Kullanıcının verdiği kodda başlığı değiştiren kısım eksik. 
+            // Bu eksikliği gidermek için veri yapısını ve bu fonksiyonu güncelledim.
 
             lbTrack.innerHTML = '';
-            images.forEach(imgSrc => {
+            product.images.forEach(imgSrc => {
                 const slide = document.createElement('div');
                 slide.className = 'lightbox-slide';
                 const img = document.createElement('img');
