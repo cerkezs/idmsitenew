@@ -103,7 +103,7 @@
 
     <div class="pb-16 container mx-auto px-6 max-w-6xl space-y-16">
 
-        <div class="product-card cursor-pointer" data-aos="fade-up" onclick="openModal1()">
+        <div class="product-card" data-aos="fade-up">
             <div class="flex flex-col md:flex-row h-auto md:h-[350px] overflow-hidden">
                 <div class="p-8 flex flex-col text-left md:w-1/2 h-auto md:h-full">
                     <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">Ürün 01</span>
@@ -116,9 +116,6 @@
                         <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Yüksek Dayanım</span>
                         <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Kalite Odaklı Üretim</span>
                     </div>
-                    <button onclick="event.stopPropagation(); openModal1()" class="mt-auto inline-flex items-center gap-2 bg-[#081234] hover:bg-blue-900 text-white px-7 py-2.5 rounded font-black transition tracking-widest text-xs uppercase w-fit">
-                        <i class="fa-solid fa-circle-info text-xs"></i> Detaylı Bilgi
-                    </button>
                 </div>
                 <div class="relative overflow-hidden md:w-1/2 h-[250px] md:h-full">
                     <div class="flex h-full transition-transform duration-500 ease-in-out" id="slider1-track" style="height:100%; position:absolute; width:100%;">
@@ -141,7 +138,7 @@
             </div>
         </div>
 
-        <div class="product-card cursor-pointer" data-aos="fade-up" onclick="openModal2()">
+        <div class="product-card" data-aos="fade-up">
             <div class="flex flex-col md:flex-row h-auto md:h-[350px] overflow-hidden">
                 <div class="relative overflow-hidden order-2 md:order-1 md:w-1/2 h-[250px] md:h-full">
                     <div class="flex h-full transition-transform duration-500 ease-in-out" id="slider2-track" style="height:100%; position:absolute; width:100%;">
@@ -171,14 +168,11 @@
                         <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Tam Uyum</span>
                         <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Mil Koruması</span>
                     </div>
-                    <button onclick="event.stopPropagation(); openModal2()" class="mt-auto inline-flex items-center gap-2 bg-[#081234] hover:bg-blue-900 text-white px-7 py-2.5 rounded font-black transition tracking-widest text-xs uppercase w-fit">
-                        <i class="fa-solid fa-circle-info text-xs"></i> Detaylı Bilgi
-                    </button>
                 </div>
             </div>
         </div>
 
-        <div class="product-card cursor-pointer" data-aos="fade-up" onclick="openModal3()">
+        <div class="product-card" data-aos="fade-up">
             <div class="flex flex-col md:flex-row h-auto md:h-[350px] overflow-hidden">
                 <div class="p-8 flex flex-col text-left md:w-1/2 h-auto md:h-full">
                     <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">Ürün 03</span>
@@ -191,9 +185,6 @@
                         <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Yüksek Yük Kapasitesi</span>
                         <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Uzun Ömür</span>
                     </div>
-                    <button onclick="event.stopPropagation(); openModal3()" class="mt-auto inline-flex items-center gap-2 bg-[#081234] hover:bg-blue-900 text-white px-7 py-2.5 rounded font-black transition tracking-widest text-xs uppercase w-fit">
-                        <i class="fa-solid fa-circle-info text-xs"></i> Detaylı Bilgi
-                    </button>
                 </div>
                 <div class="relative overflow-hidden md:w-1/2 h-[250px] md:h-full">
                     <div class="flex h-full transition-transform duration-500 ease-in-out" id="slider3-track" style="height:100%; position:absolute; width:100%;">
@@ -214,167 +205,14 @@
             </div>
         </div>
 
-    </div> <section class="bg-navy py-10 text-center text-white mb-0">
+    </div>
+
+    <section class="bg-navy py-10 text-center text-white mb-0">
         <div class="container mx-auto px-6">
             <h2 class="text-xl md:text-2xl font-black uppercase tracking-[0.4em] mb-6">Projeleriniz İçin Çözüm Ortağıyız</h2>
             <a href="iletisim.html" class="inline-block bg-blue-700 hover:bg-blue-600 text-white px-10 py-3.5 rounded font-black transition tracking-widest text-xs uppercase shadow-lg">Bizimle İletişime Geçin</a>
         </div>
     </section>
-
-    <div id="modal1" onclick="closeModal1()" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9998; align-items:center; justify-content:center; padding:20px;">
-        <div onclick="event.stopPropagation()" style="background:white; border-radius:16px; max-width:700px; width:100%; max-height:90vh; overflow-y:auto; position:relative;">
-            <button onclick="closeModal1()" style="position:absolute; top:16px; right:20px; background:none; border:none; cursor:pointer; font-size:1.5rem; color:#64748b; line-height:1;">&times;</button>
-            <div style="background:#081234; border-radius:16px 16px 0 0; padding:28px 32px;">
-                <span style="font-size:10px; font-weight:800; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:.2em;">Ürün 01</span>
-                <h2 style="font-size:22px; font-weight:900; color:white; text-transform:uppercase; margin-top:6px;">Shredder Bıçak <span style="color:#60a5fa;">Takımları</span></h2>
-            </div>
-            <div style="padding:32px;">
-                <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Ürün Hakkında</h3>
-                <p style="font-size:13px; color:#475569; line-height:1.8; margin-bottom:24px;">
-                    Shredder bıçak takımlarımız, geri dönüşüm tesisleri, enerji santralleri ve ağır sanayi tesislerinde kullanılan parçalayıcı makineler için özel olarak üretilmektedir. Dövme çelik yöntemiyle imal edilen bıçaklarımız, yüksek darbe ve aşınma direnci sayesinde zorlu çalışma koşullarında üstün performans sergiler. Her 4 köşesi de kesici yüzey olarak kullanılabildiğinden, bıçak takımı döndürülerek kullanılabilir; bu sayede parça başına maliyet önemli ölçüde düşer ve kullanım ömrü uzar.
-                </p>
-                <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Teknik Özellikler</h3>
-                <table style="width:100%; border-collapse:collapse; font-size:13px; margin-bottom:28px;">
-                    <tr style="background:#f1f5f9;">
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0; width:40%;">İmalat Yöntemi</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">Dövme Çelik</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0;">Standart Boyut</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">110 x 110 x 56 mm</td>
-                    </tr>
-                    <tr style="background:#f1f5f9;">
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0;">Kullanım Avantajı</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">4 köşe döndürülerek kullanılabilir</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0;">Özel Boyut</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">Talebe göre üretilebilir</td>
-                    </tr>
-                    <tr style="background:#f1f5f9;">
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a;">Uygulama Alanı</td>
-                        <td style="padding:10px 14px; color:#475569;">Geri Dönüşüm, Enerji Santrali, Atık Tesisleri</td>
-                    </tr>
-                </table>
-                <a href="iletisim.html" style="display:inline-flex; align-items:center; gap:8px; background:#1d4ed8; color:white; padding:12px 28px; border-radius:6px; font-weight:900; font-size:11px; text-transform:uppercase; letter-spacing:.15em; text-decoration:none;">
-                    Teklif Al <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal2" onclick="closeModal2()" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9998; align-items:center; justify-content:center; padding:20px;">
-        <div onclick="event.stopPropagation()" style="background:white; border-radius:16px; max-width:700px; width:100%; max-height:90vh; overflow-y:auto; position:relative;">
-            <button onclick="closeModal2()" style="position:absolute; top:16px; right:20px; background:none; border:none; cursor:pointer; font-size:1.5rem; color:#64748b; line-height:1;">&times;</button>
-            <div style="background:#081234; border-radius:16px 16px 0 0; padding:28px 32px;">
-                <span style="font-size:10px; font-weight:800; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:.2em;">Ürün 02</span>
-                <h2 style="font-size:22px; font-weight:900; color:white; text-transform:uppercase; margin-top:6px;">Shredder Sızdırmazlık <span style="color:#60a5fa;">Takımı</span></h2>
-            </div>
-            <div style="padding:32px;">
-                <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Ürün Hakkında</h3>
-                <p style="font-size:13px; color:#475569; line-height:1.8; margin-bottom:24px;">
-                    Shredder sızdırmazlık takımlarımız, kırıcılarda zorlu çalışma koşullarında motor mili ve dişli kutusunun korunması için özel olarak tasarlanmıştır. Parçalama işlemi sırasında hazneye dökülen yakıt, yağ, kimyasal ve diğer sıvıların motor mili tarafına geçmesini engelleyerek büyük ve maliyetli arızaların önüne geçer. Yüksek sıcaklığa ve kimyasallara dayanıklı özel elastomer malzemeden üretilen takımlarımız, sızdırmazlık performansını uzun süre korur.
-                </p>
-                <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Teknik Özellikler</h3>
-                <table style="width:100%; border-collapse:collapse; font-size:13px; margin-bottom:28px;">
-                    <tr style="background:#f1f5f9;">
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0; width:40%;">İmalat Yöntemi</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">Özel Döküm Elastomer</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0;">Malzeme Özelliği</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">Yüksek Sıcaklık/Kimyasal Dayanım</td>
-                    </tr>
-                    <tr style="background:#f1f5f9;">
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0;">Uygulama Alanı</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">Motor Mili / Hazne Sızdırmazlığı</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0;">Uyum</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">Marka/Model Bağımsız (Özel Tasarım)</td>
-                    </tr>
-                    <tr style="background:#f1f5f9;">
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a;">Kritik Koruma</td>
-                        <td style="padding:10px 14px; color:#475569;">Dişli Kutusu ve Motor Koruma</td>
-                    </tr>
-                </table>
-                <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Ürün Görselleri</h3>
-                <div style="position:relative; overflow:hidden; border-radius:10px; margin-bottom:28px;" id="m2gallery-wrap">
-                    <div id="m2gallery-track" style="display:flex; transition:transform 0.5s ease; height:220px;">
-                        <img src="sizdirmazlik1.jpg" onclick="openLightbox(this.src)" style="flex-shrink:0; width:100%; height:220px; object-fit:cover; cursor:zoom-in;" alt="Sızdırmazlık Görsel 1">
-                        <img src="sizdirmazlik2.jpg" onclick="openLightbox(this.src)" style="flex-shrink:0; width:100%; height:220px; object-fit:cover; cursor:zoom-in;" alt="Sızdırmazlık Görsel 2">
-                        <img src="sizdirmazlik3.jpg" onclick="openLightbox(this.src)" style="flex-shrink:0; width:100%; height:220px; object-fit:cover; cursor:zoom-in;" alt="Sızdırmazlık Görsel 3">
-                    </div>
-                    <button onclick="m2GalleryMove(-1)" style="position:absolute; left:8px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.45); border:none; color:white; width:32px; height:32px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:10;">
-                        <i class="fa-solid fa-chevron-left" style="font-size:11px;"></i>
-                    </button>
-                    <button onclick="m2GalleryMove(1)" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.45); border:none; color:white; width:32px; height:32px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:10;">
-                        <i class="fa-solid fa-chevron-right" style="font-size:11px;"></i>
-                    </button>
-                    <div style="position:absolute; bottom:10px; left:50%; transform:translateX(-50%); display:flex; gap:6px;" id="m2gallery-dots"></div>
-                </div>
-                <a href="iletisim.html" style="display:inline-flex; align-items:center; gap:8px; background:#1d4ed8; color:white; padding:12px 28px; border-radius:6px; font-weight:900; font-size:11px; text-transform:uppercase; letter-spacing:.15em; text-decoration:none;">
-                    Teklif Al <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal3" onclick="closeModal3()" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.7); z-index:9998; align-items:center; justify-content:center; padding:20px;">
-        <div onclick="event.stopPropagation()" style="background:white; border-radius:16px; max-width:700px; width:100%; max-height:90vh; overflow-y:auto; position:relative;">
-            <button onclick="closeModal3()" style="position:absolute; top:16px; right:20px; background:none; border:none; cursor:pointer; font-size:1.5rem; color:#64748b; line-height:1;">&times;</button>
-            <div style="background:#081234; border-radius:16px 16px 0 0; padding:28px 32px;">
-                <span style="font-size:10px; font-weight:800; color:rgba(255,255,255,0.5); text-transform:uppercase; letter-spacing:.2em;">Ürün 03</span>
-                <h2 style="font-size:22px; font-weight:900; color:white; text-transform:uppercase; margin-top:6px;">Konveyör <span style="color:#60a5fa;">Rulo İmalatı</span></h2>
-            </div>
-            <div style="padding:32px;">
-                <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Ürün Hakkında</h3>
-                <p style="font-size:13px; color:#475569; line-height:1.8; margin-bottom:24px;">
-                    Konveyör rulo imalatımız, taşıma ve aktarma sistemlerinde kullanılan tüm rulo tiplerine yönelik özel üretim esasına dayanmaktadır. Her müşterinin sistemi farklı olduğundan boyutlar standarize edilmemiş olup, kullanılan sisteme ait ölçüler doğrultusunda birebir üretim gerçekleştirilmektedir. Yüksek yük kapasitesine uygun malzeme seçimiyle uzun ömürlü ve güvenilir rulolar üretiyoruz. Tüm ölçü bilgilerini bizimle paylaşmanız yeterli; geri kalanını biz hallederiz.
-                </p>
-                <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Teknik Özellikler</h3>
-                <table style="width:100%; border-collapse:collapse; font-size:13px; margin-bottom:28px;">
-                    <tr style="background:#f1f5f9;">
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0; width:40%;">İmalat Tipi</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">Özel Ölçü Üretim</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0;">Uygulama Alanı</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">Konveyör ve Taşıma Sistemleri</td>
-                    </tr>
-                    <tr style="background:#f1f5f9;">
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0;">Yük Kapasitesi</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">Hassas Mühendislik Hesaplaması</td>
-                    </tr>
-                    <tr>
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a; border-bottom:1px solid #e2e8f0;">Malzeme</td>
-                        <td style="padding:10px 14px; color:#475569; border-bottom:1px solid #e2e8f0;">Yüksek Dayanımlı Çelik/Polimer</td>
-                    </tr>
-                    <tr style="background:#f1f5f9;">
-                        <td style="padding:10px 14px; font-weight:700; color:#0f172a;">Teslimat</td>
-                        <td style="padding:10px 14px; color:#475569;">Boya/Kaplama Opsiyonları</td>
-                    </tr>
-                </table>
-                <h3 style="font-size:11px; font-weight:800; color:#1d4ed8; text-transform:uppercase; letter-spacing:.2em; margin-bottom:12px; padding-left:12px; border-left:4px solid #1d4ed8;">Ürün Görselleri</h3>
-                <div style="position:relative; overflow:hidden; border-radius:10px; margin-bottom:28px;" id="m3gallery-wrap">
-                    <div id="m3gallery-track" style="display:flex; transition:transform 0.5s ease; height:220px;">
-                        <img src="rulo1.jpg" onclick="openLightbox(this.src)" style="flex-shrink:0; width:100%; height:220px; object-fit:cover; cursor:zoom-in;" alt="Rulo Görsel 1">
-                        <img src="rulo2.jpg" onclick="openLightbox(this.src)" style="flex-shrink:0; width:100%; height:220px; object-fit:cover; cursor:zoom-in;" alt="Rulo Görsel 2">
-                    </div>
-                    <button onclick="m3GalleryMove(-1)" style="position:absolute; left:8px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.45); border:none; color:white; width:32px; height:32px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:10;">
-                        <i class="fa-solid fa-chevron-left" style="font-size:11px;"></i>
-                    </button>
-                    <button onclick="m3GalleryMove(1)" style="position:absolute; right:8px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.45); border:none; color:white; width:32px; height:32px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:10;">
-                        <i class="fa-solid fa-chevron-right" style="font-size:11px;"></i>
-                    </button>
-                    <div style="position:absolute; bottom:10px; left:50%; transform:translateX(-50%); display:flex; gap:6px;" id="m3gallery-dots"></div>
-                </div>
-                <a href="iletisim.html" style="display:inline-flex; align-items:center; gap:8px; background:#1d4ed8; color:white; padding:12px 28px; border-radius:6px; font-weight:900; font-size:11px; text-transform:uppercase; letter-spacing:.15em; text-decoration:none;">
-                    Teklif Al <i class="fa-solid fa-arrow-right" style="font-size:10px;"></i>
-                </a>
-            </div>
-        </div>
-    </div>
 
     <div id="lightbox" onclick="closeLightbox()">
         <button onclick="closeLightbox()" style="position:absolute;top:20px;right:28px;color:white;font-size:2rem;font-weight:900;background:none;border:none;cursor:pointer;">&times;</button>
@@ -496,80 +334,9 @@
         function s3Move(dir){ s3go((s3cur + dir + s3tot) % s3tot); }
         setInterval(() => s3Move(1), 4000);
 
-
-        // --- Modallar ---
-        function openModal1() {
-            const m = document.getElementById('modal1');
-            m.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-        }
-        function closeModal1() {
-            document.getElementById('modal1').style.display = 'none';
-            document.body.style.overflow = '';
-        }
-
-        function openModal2() {
-            const m = document.getElementById('modal2');
-            m.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            const dots = document.getElementById('m2gallery-dots');
-            if(dots && dots.children.length === 0) {
-                const tot = 3; 
-                for(let i=0; i<tot; i++){
-                    const d = document.createElement('button');
-                    d.style.cssText = 'width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;background:' + (i===0?'white':'rgba(255,255,255,0.4)');
-                    d.onclick = (e) => { e.stopPropagation(); m2GalleryGo(i); };
-                    dots.appendChild(d);
-                }
-            }
-        }
-        function closeModal2() {
-            document.getElementById('modal2').style.display = 'none';
-            document.body.style.overflow = '';
-        }
-
-        let m2cur = 0, m2tot = 3;
-        function m2GalleryGo(n) {
-            m2cur = n;
-            document.getElementById('m2gallery-track').style.transform = `translateX(-${n*100}%)`;
-            const dots = document.getElementById('m2gallery-dots');
-            if(dots) dots.querySelectorAll('button').forEach((d,i) => d.style.background = i===n ? 'white' : 'rgba(255,255,255,0.4)');
-        }
-        function m2GalleryMove(dir) { m2GalleryGo((m2cur + dir + m2tot) % m2tot); }
-        setInterval(() => { if(document.getElementById('modal2').style.display === 'flex') m2GalleryMove(1); }, 3500);
-
-        function openModal3() {
-            const m = document.getElementById('modal3');
-            m.style.display = 'flex';
-            document.body.style.overflow = 'hidden';
-            const dots = document.getElementById('m3gallery-dots');
-            if(dots && dots.children.length === 0) {
-                const tot = 2; 
-                for(let i=0; i<tot; i++){
-                    const d = document.createElement('button');
-                    d.style.cssText = 'width:8px;height:8px;border-radius:50%;border:none;cursor:pointer;background:' + (i===0?'white':'rgba(255,255,255,0.4)');
-                    d.onclick = (e) => { e.stopPropagation(); m3GalleryGo(i); };
-                    dots.appendChild(d);
-                }
-            }
-        }
-        function closeModal3() {
-            document.getElementById('modal3').style.display = 'none';
-            document.body.style.overflow = '';
-        }
-
-        let m3cur = 0, m3tot = 2;
-        function m3GalleryGo(n) {
-            m3cur = n;
-            document.getElementById('m3gallery-track').style.transform = `translateX(-${n*100}%)`;
-            const dots = document.getElementById('m3gallery-dots');
-            if(dots) dots.querySelectorAll('button').forEach((d,i) => d.style.background = i===n ? 'white' : 'rgba(255,255,255,0.4)');
-        }
-        function m3GalleryMove(dir) { m3GalleryGo((m3cur + dir + m3tot) % m3tot); }
-        setInterval(() => { if(document.getElementById('modal3').style.display === 'flex') m3GalleryMove(1); }, 3800);
-
+        // ESC tuşu ile Lightbox kapatma
         document.addEventListener('keydown', (e) => {
-            if(e.key === 'Escape') { closeModal1(); closeModal2(); closeModal3(); closeLightbox(); }
+            if(e.key === 'Escape') { closeLightbox(); }
         });
 
         // --- Lightbox ---
