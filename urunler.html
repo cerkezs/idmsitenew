@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ürünlerimiz | İDM Mühendislik</title>
     
+    <meta name="description" content="İDM Mühendislik; elektrik üretim, geri dönüşüm ve atıktan türetilmiş yakıt tesisleri için yüksek dayanımlı shredder bıçakları, kırıcı bıçakları ve konveyör ruloları imalatı yapmaktadır.">
+    <meta name="keywords" content="shredder bıçakları, kırıcı bıçakları, parçalayıcı bıçak, shredder knife, endüstriyel bıçak imalatı, rotor bıçakları">
+    <meta name="robots" content="index, follow">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -124,10 +128,10 @@
                     <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">Ürün 01</span>
                     <h2 class="text-xl md:text-2xl font-black navy-blue uppercase mb-4 tracking-wider">Shredder Bıçak<br><span class="text-blue-700">Takımları</span></h2>
                     <p class="text-slate-600 leading-relaxed mb-5 text-[15px] font-medium text-justify">
-                        Geri dönüşüm ve ağır sanayi tesislerinde kullanılan shredder makineleri için özel alaşımlı bıçak takımları üretiyoruz. Yüksek aşınma direnci ve uzun kullanım ömrü ile sektörün önde gelen markalarına uyumlu çözümler sunuyoruz.
+                        Elektrik üretim, geri dönüşüm ve atıktan türetilmiş yakıt tesislerinde zorlu şartlar altında çalışan shredder makineleri için dövme çelik bıçak takımları üretiyoruz. Yüksek aşınma direnci ve uzun kullanım ömrü ile sektörün önde gelen markalarına tam uyumlu, verimli çözümler sunuyoruz.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Özel Alaşım</span>
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Dövme Çelik</span>
                         <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Yüksek Dayanım</span>
                         <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Kalite Odaklı Üretim</span>
                     </div>
@@ -240,7 +244,7 @@
         </button>
 
         <div class="lightbox-track" id="lightbox-track" onclick="closeLightbox()">
-            </div>
+        </div>
     </div>
 
     <footer class="bg-[#081234] text-white pt-14 pb-6 mt-0 border-t border-white/10">
@@ -320,7 +324,6 @@
             s1dots.querySelectorAll('button').forEach((d,i) => d.style.background = i===n ? 'white' : 'rgba(255,255,255,0.4)');
         }
         function s1Move(dir){ s1go((s1cur + dir + s1tot) % s1tot); }
-        // setInterval(() => s1Move(1), 3500); // Otomatik kaymayı kapattım (büyütme ile karışmasın diye)
 
         // --- Slider 2 (Sızdırmazlık Takımı) ---
         let s2cur = 0, s2tot = 3; 
@@ -339,7 +342,6 @@
             s2dots.querySelectorAll('button').forEach((d,i) => d.style.background = i===n ? 'white' : 'rgba(255,255,255,0.4)');
         }
         function s2Move(dir){ s2go((s2cur + dir + s2tot) % s2tot); }
-        // setInterval(() => s2Move(1), 3800);
 
         // --- Slider 3 (Konveyör Rulo) ---
         let s3cur = 0, s3tot = 2;
@@ -358,7 +360,6 @@
             s3dots.querySelectorAll('button').forEach((d,i) => d.style.background = i===n ? 'white' : 'rgba(255,255,255,0.4)');
         }
         function s3Move(dir){ s3go((s3cur + dir + s3tot) % s3tot); }
-        // setInterval(() => s3Move(1), 4000);
 
         // ESC tuşu ile Büyütme ekranını kapatma
         document.addEventListener('keydown', (e) => {
@@ -366,9 +367,9 @@
         });
 
 
-        // --- YENİ BÜYÜTME (LIGHTBOX) SLIDER MANTIĞI ---
+        // --- BÜYÜTME (LIGHTBOX) SLIDER MANTIĞI ---
 
-        // 1. Ürün Verileri (Hangi ürün id'sinde hangi resimler var)
+        // 1. Ürün Verileri
         const productsImagesData = {
             'shredder-blades': ['bicak1.jpg', 'bicak2.jpg', 'bicak3.jpg', 'bicak4.jpg'],
             'sealing-kits': ['sizdirmazlik1.jpg', 'sizdirmazlik2.jpg', 'sizdirmazlik3.jpg'],
@@ -376,62 +377,55 @@
         };
 
         // Büyütme ekranı durumu
-        let currentLbKey = '';   // Hangi ürün grubu açık
-        let currentLbIndex = 0; // Hangi resim açık
-        let currentLbTotal = 0; // Toplam kaç resim var
+        let currentLbKey = '';   
+        let currentLbIndex = 0; 
+        let currentLbTotal = 0; 
 
         const lbModal = document.getElementById('lightbox');
         const lbTrack = document.getElementById('lightbox-track');
 
-        // Büyütme ekranını açar (productId: veri anahtarı, index: kaçıncı resimden başlasın)
         function openLightbox(productKey, index){
             const images = productsImagesData[productKey];
-            if(!images) return; // Veri yoksa bir şey yapma
+            if(!images) return; 
 
             currentLbKey = productKey;
             currentLbIndex = index;
             currentLbTotal = images.length;
 
-            // Pist temizlenir ve dinamik olarak doldurulur
             lbTrack.innerHTML = '';
             images.forEach(imgSrc => {
                 const slide = document.createElement('div');
                 slide.className = 'lightbox-slide';
                 const img = document.createElement('img');
                 img.src = imgSrc;
-                // Resme tıklandığında büyütme kapanmasın diye event.stopPropagation() eklenir
                 img.onclick = (e) => e.stopPropagation(); 
                 slide.appendChild(img);
                 lbTrack.appendChild(slide);
             });
 
-            // Başlangıç resmi ayarlanır ve ekran açılır
             s1goLightbox(index);
             lbModal.classList.add('open');
-            document.body.style.overflow = 'hidden'; // Sayfa kaymasını engelle
+            document.body.style.overflow = 'hidden'; 
         }
 
-        // Büyütme ekranını kapatır
         function closeLightbox(){
             lbModal.classList.remove('open');
-            document.body.style.overflow = ''; // Sayfa kaymasını geri aç
-            lbTrack.innerHTML = ''; // Temizle
+            document.body.style.overflow = ''; 
+            lbTrack.innerHTML = ''; 
         }
 
-        // Kayma mantığı
         function s1goLightbox(n){
             currentLbIndex = n;
             lbTrack.style.transform = `translateX(-${n*100}%)`;
         }
 
         function moveLightbox(dir){
-            if(currentLbTotal <= 1) return; // Tek resim varsa kayma
+            if(currentLbTotal <= 1) return; 
             s1goLightbox((currentLbIndex + dir + currentLbTotal) % currentLbTotal);
         }
 
-        // Klavyeden sağ-sol ok tuşları ile kontrol
         document.addEventListener('keydown', (e) => {
-            if(!lbModal.classList.contains('open')) return; // Büyütme kapalıysa işlem yapma
+            if(!lbModal.classList.contains('open')) return; 
             if(e.key === 'ArrowLeft') { moveLightbox(-1); }
             if(e.key === 'ArrowRight') { moveLightbox(1); }
         });
