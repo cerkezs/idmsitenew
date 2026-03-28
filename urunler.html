@@ -34,28 +34,23 @@
             box-shadow: 0 25px 50px -10px rgba(8,18,52,0.15);
         }
 
-        /* --- YENİ Slider (Lightbox) Stilleri --- */
+        /* --- Slider (Lightbox) Stilleri --- */
         #lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.95); z-index:9999; align-items:center; justify-content:center; }
         #lightbox.open { display:flex; }
         
-        /* Lightbox içindeki pist */
         .lightbox-track { display: flex; transition: transform 0.3s ease; height: 100%; }
         
-        /* Lightbox içindeki her bir resim hücresi */
         .lightbox-slide { flex: 0 0 100%; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
         .lightbox-slide img { max-width:90vw; max-height:90vh; border-radius:12px; object-fit:contain; }
 
-        /* Yönlendirme butonları */
         .lb-nav-btn { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; width: 44px; height: 44px; border-radius: 50%; font-size: 1.25rem; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 0.3s; z-index: 10001; }
         .lb-nav-btn:hover { background: rgba(0,0,0,0.8); }
         .lb-nav-btn.prev { left: 24px; }
         .lb-nav-btn.next { right: 24px; }
 
-        /* Kapat butonu */
         #lb-close-btn { position: absolute; top: 20px; right: 28px; color: white; font-size: 2.5rem; font-weight: 900; background: none; border: none; cursor: pointer; z-index: 10002; transition: opacity 0.3s; }
         #lb-close-btn:hover { opacity: 0.7; }
 
-        /* --- Sayfa içi slider dots --- */
         .dot-btn { width:8px; height:8px; border-radius:50%; border:none; cursor:pointer; transition: background 0.3s; }
     </style>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -140,8 +135,6 @@
                     <div class="flex h-full transition-transform duration-500 ease-in-out" id="slider1-track" style="height:100%; position:absolute; width:100%;">
                         <img src="bicak1.jpg" class="flex-shrink-0 object-cover cursor-zoom-in" style="width:100%; height:100%; flex-shrink:0;" alt="Shredder Bıçak 1" onclick="openLightbox('shredder-blades', 0)">
                         <img src="bicak2.jpg" class="flex-shrink-0 object-cover cursor-zoom-in" style="width:100%; height:100%; flex-shrink:0;" alt="Shredder Bıçak 2" onclick="openLightbox('shredder-blades', 1)">
-                        <img src="bicak3.jpg" class="flex-shrink-0 object-cover cursor-zoom-in" style="width:100%; height:100%; flex-shrink:0;" alt="Shredder Bıçak 3" onclick="openLightbox('shredder-blades', 2)">
-                        <img src="bicak4.jpg" class="flex-shrink-0 object-cover cursor-zoom-in" style="width:100%; height:100%; flex-shrink:0;" alt="Shredder Bıçak 4" onclick="openLightbox('shredder-blades', 3)">
                     </div>
                     <button onclick="s1Move(-1)" class="absolute left-2 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-black/70 text-white w-8 h-8 rounded-full flex items-center justify-center transition z-10">
                         <i class="fa-solid fa-chevron-left text-xs"></i>
@@ -180,12 +173,12 @@
                     <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">İDM 02</span>
                     <h2 class="text-xl md:text-2xl font-black navy-blue uppercase mb-4 tracking-wider">Shredder<br><span class="text-blue-700">Sızdırmazlık Takımı</span></h2>
                     <p class="text-slate-600 leading-relaxed mb-5 text-[15px] font-medium text-justify">
-                        Shredder kırıcılarda motor mili ve dişli kutusunu koruyan kritik parçalardır. <span class="text-blue-700 font-bold">Kırıcı haznesine dökülen yakıt, yağ ve sıvıların</span>, motor mili tarafına geçmesini engelleyerek büyük ve maliyetli arızaların önüne geçer.
+                        Shredder kırıcılarda kırılan zorlu malzemelerin ve aşındırıcı kalıntıların motor tarafına geçmesini engelleyen kritik koruma elemanlarıdır. Katı atıkların, sert yabancı cisimlerin ve mekanik sıkışmaya yol açabilecek materyallerin mekanik aksama sızmasını engelleyerek büyük ve maliyetli arızaların önüne geçer.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-6">
-                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Özel Malzeme</span>
-                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Tam Uyum</span>
-                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Mil Koruması</span>
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Mekanik Bariyer</span>
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Motor Koruması</span>
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Uzun Ömürlü</span>
                     </div>
                 </div>
             </div>
@@ -196,13 +189,15 @@
                 <div class="p-8 flex flex-col text-left md:w-1/2 h-auto md:h-full">
                     <span class="inline-block text-xs font-black text-blue-700 uppercase tracking-[0.3em] mb-3 border-l-4 border-blue-700 pl-3">İDM 03</span>
                     <h2 class="text-xl md:text-2xl font-black navy-blue uppercase mb-4 tracking-wider">Konveyör<br><span class="text-blue-700">Rulo İmalatı</span></h2>
+                    
                     <p class="text-slate-600 leading-relaxed mb-5 text-[15px] font-medium text-justify">
-                        Taşıma ve aktarma sistemlerinde kullanılan tüm rulo tiplerine yönelik özel üretim yapmaktayız. Her müşterinin sistemine uygun boyutlarda, yüksek yük kapasitesine sahip, dayanıklı ve uzun ömürlü rulolar üretiyoruz.
+                        Taşıma ve aktarma sistemlerinde kullanılan ruloların işletmenizin prosesine ve konveyör şaselerine tam uyumlu olacak şekilde imalatını gerçekleştirmekteyiz. İhtiyacınıza uygun ebatlarda; hassas talaşlı imalat ile işlenen ve iç aksamı kirlenmelere karşı özel keçe sistemleriyle korunan rulolar üretiyoruz.
                     </p>
+                    
                     <div class="flex flex-wrap gap-2 mb-6">
                         <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Özel Ölçü</span>
-                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Yüksek Yük Kapasitesi</span>
-                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Uzun Ömür</span>
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Talaşlı İmalat</span>
+                        <span class="bg-slate-100 text-slate-700 text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wide">Keçe Sistemi</span>
                     </div>
                 </div>
                 <div class="relative overflow-hidden md:w-1/2 h-[250px] md:h-full">
@@ -308,7 +303,7 @@
         // --- Sayfa İçi Kayma Mantığı ---
         
         // --- Slider 1 (Shredder Bıçak) ---
-        let s1cur = 0, s1tot = 4;
+        let s1cur = 0, s1tot = 2; 
         const s1track = document.getElementById('slider1-track');
         const s1dots = document.getElementById('s1-dots');
         for(let i=0; i<s1tot; i++){
@@ -366,40 +361,31 @@
             if(e.key === 'Escape') { closeLightbox(); }
         });
 
-
         // --- BÜYÜTME (LIGHTBOX) SLIDER MANTIĞI ---
-
-        // 1. Ürün Verileri
         const productsData = {
             'shredder-blades': {
-                label: 'İDM 01', // Veri yapısı İDM XX olarak güncellendi
+                label: 'İDM 01',
                 title: 'Shredder Bıçak Takımları',
-                images: ['bicak1.jpg', 'bicak2.jpg', 'bicak3.jpg', 'bicak4.jpg'],
+                images: ['bicak1.jpg', 'bicak2.jpg'],
             },
             'sealing-kits': {
-                label: 'İDM 02', // Veri yapısı İDM XX olarak güncellendi
+                label: 'İDM 02',
                 title: 'Shredder Sızdırmazlık Takımı',
                 images: ['sizdirmazlik1.jpg', 'sizdirmazlik2.jpg', 'sizdirmazlik3.jpg'],
             },
             'rolls': {
-                label: 'İDM 03', // Veri yapısı İDM XX olarak güncellendi
+                label: 'İDM 03',
                 title: 'Konveyör Rulo İmalatı',
                 images: ['rulo1.jpg', 'rulo2.jpg'],
             }
         };
 
-        // Büyütme ekranı durumu
         let currentLbKey = '';   
         let currentLbIndex = 0; 
         let currentLbTotal = 0; 
 
         const lbModal = document.getElementById('lightbox');
         const lbTrack = document.getElementById('lightbox-track');
-        // Modal başlık elementlerini ekleyin (Eğer HTML'de yoksa, JavaScript ile oluşturmalıyız veya HTML'e eklemeliyiz. Mevcut kodda yok.)
-        // Referans resimlere göre modal başlığını da güncellemek gerekiyor.
-        // Kullanıcının verdiği kodda detayları yükleyen kısım yok, sadece resimleri yüklüyor. 
-        // Ancak modalın sol üstünde "ÜRÜN 01" başlığı var. 
-        // Bu başlığı da JavaScript ile dinamik olarak değiştirmeliyiz.
 
         function openLightbox(productKey, index){
             const product = productsData[productKey];
@@ -408,13 +394,6 @@
             currentLbKey = productKey;
             currentLbIndex = index;
             currentLbTotal = product.images.length;
-
-            // Modal başlığını ve etiketini güncelle (Bu alanların HTML'de olduğunu varsayıyorum)
-            // Eğer HTML'de yoksa, dinamik yükleme yapısı eksik demektir.
-            // Referans resimlerden modal başlığının (ÜRÜN XX) statik kodlandığı veya 
-            // modal başlığını da dinamik yükleyen bir JavaScript parçası olduğu anlaşılıyor. 
-            // Kullanıcının verdiği kodda başlığı değiştiren kısım eksik. 
-            // Bu eksikliği gidermek için veri yapısını ve bu fonksiyonu güncelledim.
 
             lbTrack.innerHTML = '';
             product.images.forEach(imgSrc => {
