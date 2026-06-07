@@ -331,7 +331,7 @@ h3 {
 /* A4 Kağıt Stili (Orijinal Tasarıma Uygun) */
 .a4-page {
     width: 210mm;
-    min-height: 297mm;
+    min-height: 296,5mm;
     background: white;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     padding: 15mm;
