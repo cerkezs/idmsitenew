@@ -313,10 +313,30 @@ function calculateTotals() {
         }
     }
 
-    const kdv = subtotal * 0.20;
-    const grandTotal = subtotal + kdv;
+    const isIskontoActive = document.getElementById("check-iskonto")?.checked;
+    const iskontoRateStr = document.getElementById("input-iskonto")?.value;
+    const iskontoRate = parseFloat(iskontoRateStr) || 0;
 
     document.getElementById("out-toplam").textContent = formatMoney(subtotal);
+
+    let kdvBase = subtotal;
+
+    if (isIskontoActive && iskontoRate > 0) {
+        const iskontoAmount = subtotal * (iskontoRate / 100);
+        const afterIskonto = subtotal - iskontoAmount;
+
+        // Oran etiketini güncelle (virgüllü Türkçe format)
+        const rateLabel = iskontoRate.toLocaleString('tr-TR', { minimumFractionDigits: 0, maximumFractionDigits: 3 });
+        document.getElementById("out-iskonto-label").textContent = `İskonto (%${rateLabel})`;
+        document.getElementById("out-iskonto").textContent = formatMoney(iskontoAmount);
+        document.getElementById("out-iskonto-sonrasi").textContent = formatMoney(afterIskonto);
+
+        kdvBase = afterIskonto;
+    }
+
+    const kdv = kdvBase * 0.20;
+    const grandTotal = kdvBase + kdv;
+
     document.getElementById("out-kdv").textContent = formatMoney(kdv);
     document.getElementById("out-genel-toplam").textContent = formatMoney(grandTotal);
 }
@@ -333,6 +353,31 @@ function toggleKaseSimza() {
     
     document.getElementById("out-kase").style.display = kaseChecked ? "block" : "none";
     document.getElementById("out-simza").style.display = simzaChecked ? "block" : "none";
+}
+
+// İskonto aç/kapat
+function toggleIskonto() {
+    const isChecked = document.getElementById("check-iskonto").checked;
+    const inputArea = document.getElementById("iskonto-input-area");
+    const rowIskonto = document.getElementById("row-iskonto");
+    const rowIskontoSonrasi = document.getElementById("row-iskonto-sonrasi");
+    const aciklamaCell = document.getElementById("aciklama-cell");
+
+    if (isChecked) {
+        inputArea.style.display = "block";
+        rowIskonto.style.display = "";
+        rowIskontoSonrasi.style.display = "";
+        aciklamaCell.rowSpan = 5;
+        document.getElementById("input-iskonto").focus();
+    } else {
+        inputArea.style.display = "none";
+        rowIskonto.style.display = "none";
+        rowIskontoSonrasi.style.display = "none";
+        aciklamaCell.rowSpan = 3;
+        document.getElementById("input-iskonto").value = "";
+    }
+
+    calculateTotals();
 }
 
 // Görseli base64'e dönüştürür (PDF kalitesi ve offline kullanım için)

@@ -1028,3 +1028,14 @@ th, td {
     border-color: #94a3b8;
     color: #0f172a;
 }
+
+/* ===================== */
+/* İSKONTO STİLLERİ */
+/* ===================== */
+.iskonto-toggle-row {
+    background-color: #eff6ff;
+    border: 1px solid #bfdbfe;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 0;
+}
