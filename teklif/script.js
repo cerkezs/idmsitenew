@@ -327,7 +327,7 @@ function calculateTotals() {
 
         // Oran etiketini güncelle (virgüllü Türkçe format)
         const rateLabel = iskontoRate.toLocaleString('tr-TR', { minimumFractionDigits: 0, maximumFractionDigits: 3 });
-        document.getElementById("out-iskonto-label").textContent = `İskonto (%${rateLabel})`;
+        document.getElementById("out-iskonto-label").textContent = `İSKONTO (%${rateLabel})`;
         document.getElementById("out-iskonto").textContent = formatMoney(iskontoAmount);
         document.getElementById("out-iskonto-sonrasi").textContent = formatMoney(afterIskonto);
 
@@ -362,18 +362,21 @@ function toggleIskonto() {
     const rowIskonto = document.getElementById("row-iskonto");
     const rowIskontoSonrasi = document.getElementById("row-iskonto-sonrasi");
     const aciklamaCell = document.getElementById("aciklama-cell");
+    const toplamLabel = document.getElementById("out-toplam-label");
 
     if (isChecked) {
         inputArea.style.display = "block";
         rowIskonto.style.display = "";
         rowIskontoSonrasi.style.display = "";
         aciklamaCell.rowSpan = 5;
+        toplamLabel.textContent = "TUTAR";
         document.getElementById("input-iskonto").focus();
     } else {
         inputArea.style.display = "none";
         rowIskonto.style.display = "none";
         rowIskontoSonrasi.style.display = "none";
         aciklamaCell.rowSpan = 3;
+        toplamLabel.textContent = "TOPLAM TUTAR";
         document.getElementById("input-iskonto").value = "";
     }
 
