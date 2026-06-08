@@ -170,6 +170,22 @@
         <button class="btn-add-item" onclick="addNewItemRow()">+ Yeni Kalem Ekle</button>
 
         <hr class="divider">
+
+        <!-- İSKONTO -->
+        <div class="form-group iskonto-toggle-row">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <input type="checkbox" id="check-iskonto" style="width: 17px; height: 17px; cursor: pointer; accent-color: #1e3a8a;" onchange="toggleIskonto()">
+                <label for="check-iskonto" style="margin: 0; cursor: pointer; font-size: 14px; font-weight: 600; color: #1e3a8a;">İskonto Uygula</label>
+            </div>
+        </div>
+        <div id="iskonto-input-area" style="display: none; margin-top: 6px; margin-bottom: 4px;">
+            <div class="form-group" style="margin-bottom: 0;">
+                <label>İskonto %</label>
+                <input type="number" id="input-iskonto" placeholder="Örn: 24.174" min="0" max="100" step="0.001" oninput="calculateTotals()">
+            </div>
+        </div>
+
+        <hr class="divider">
         <div class="form-group">
             <label>Açıklamalar</label>
             <textarea id="input-aciklama" rows="3" placeholder="Eklemek istediğiniz notlar..."></textarea>
@@ -296,12 +312,20 @@
                 </tbody>
                 <tfoot>
                     <tr>
-                        <td colspan="3" rowspan="3" class="align-top text-left no-border-right">
+                        <td colspan="3" rowspan="3" id="aciklama-cell" class="align-top text-left no-border-right">
                             <span class="bold">AÇIKLAMALAR:</span><br>
                             <span id="out-aciklama" class="aciklama-text"></span>
                         </td>
                         <td class="bg-gray bold text-right no-border-left">TOPLAM TUTAR</td>
                         <td class="text-right"><span class="currency">₺</span><span id="out-toplam">-</span></td>
+                    </tr>
+                    <tr id="row-iskonto" style="display: none;">
+                        <td class="bold text-right no-border-left" id="out-iskonto-label">İskonto (%0)</td>
+                        <td class="text-right"><span>-</span><span class="currency">₺</span><span id="out-iskonto">-</span></td>
+                    </tr>
+                    <tr id="row-iskonto-sonrasi" style="display: none;">
+                        <td class="bg-gray bold text-right no-border-left">Toplam Tutar</td>
+                        <td class="text-right"><span class="currency">₺</span><span id="out-iskonto-sonrasi">-</span></td>
                     </tr>
                     <tr>
                         <td class="bg-gray bold text-right no-border-left">20 % KDV</td>
