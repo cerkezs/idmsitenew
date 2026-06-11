@@ -409,19 +409,25 @@ function getImageAsBase64(imgId) {
     });
 }
 
-// PDF İndirme Öncesi Firestore Kaydı Yapıp Sonra İndir
+// PDF İndirme Öncesi Firestore + ERPNext Kaydı Yapıp Sonra İndir
 async function triggerProposalSaveAndDownload() {
-    const proposalNo = document.getElementById("input-4").value;
+    const proposalNo   = document.getElementById("input-4").value;
     const customerName = document.getElementById("input-1").value;
-    const date = document.getElementById("input-5").value;
+    const date         = document.getElementById("input-5").value;
     
     if (proposalNo && customerName) {
+        // Firebase'e kaydet (mevcut)
         if (typeof saveProposalToFirebase === 'function') {
             await saveProposalToFirebase({
                 id: proposalNo,
                 customerName: customerName,
                 date: date
             });
+        }
+
+        // ERPNext'e kaydet (yeni - arka planda, PDF'i beklettirmez)
+        if (typeof saveToERPNext === 'function') {
+            saveToERPNext(collectTeklifData());
         }
     }
     
