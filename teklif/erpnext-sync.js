@@ -57,6 +57,51 @@ function collectTeklifData() {
     };
 }
 
+// ERPNext'te Lead ara, yoksa oluştur
+async function getOrCreateLead(customerName) {
+    const authHeader = `token ${ERPNEXT.api_key}:${ERPNEXT.api_secret}`;
+
+    // Önce mevcut Lead'i ara
+    try {
+        const searchUrl = `${ERPNEXT.url}/api/resource/Lead?filters=${encodeURIComponent(JSON.stringify([["lead_name","=",customerName]]))}&fields=["name"]&limit=1`;
+        const searchResp = await fetch(searchUrl, {
+            headers: { 'Authorization': authHeader }
+        });
+        if (searchResp.ok) {
+            const searchData = await searchResp.json();
+            if (searchData.data && searchData.data.length > 0) {
+                console.log('ERPNext: Mevcut Lead bulundu →', searchData.data[0].name);
+                return searchData.data[0].name;
+            }
+        }
+    } catch(e) { /* sessiz devam */ }
+
+    // Yoksa yeni Lead oluştur
+    try {
+        const createResp = await fetch(`${ERPNEXT.url}/api/resource/Lead`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': authHeader
+            },
+            body: JSON.stringify({ data: {
+                doctype    : 'Lead',
+                lead_name  : customerName,
+                status     : 'Lead',
+                source     : 'Cold Calling'
+            }})
+        });
+        if (createResp.ok) {
+            const createData = await createResp.json();
+            console.log('ERPNext: Yeni Lead oluşturuldu →', createData.data.name);
+            return createData.data.name;
+        }
+    } catch(e) { /* sessiz devam */ }
+
+    // Her şey başarısız olursa müşteri adını döndür
+    return customerName;
+}
+
 // ERPNext'e Satış Teklifi olarak kaydeder
 async function saveToERPNext(data) {
     // API key ayarlanmamışsa sessizce çık
@@ -73,6 +118,9 @@ async function saveToERPNext(data) {
     try {
         const currency = CURRENCY_MAP[data.currency] || 'TRY';
 
+        // Lead'i bul veya oluştur
+        const leadName = await getOrCreateLead(data.customerName);
+
         const erpItems = data.items.map(item => ({
             item_code   : ERPNEXT.item_code,
             item_name   : item.name.substring(0, 140),
@@ -83,15 +131,14 @@ async function saveToERPNext(data) {
         }));
 
         const payload = {
-            doctype              : 'Quotation',
-            title                : data.proposalNo || data.customerName,
-            quotation_to         : 'Lead',
-            party_name           : data.customerName,
-            transaction_date     : data.date,
-            currency             : currency,
-            selling_price_list   : 'Standard Selling',
-            items                : erpItems,
-            terms                : data.notes || ''
+            doctype          : 'Quotation',
+            title            : data.proposalNo || data.customerName,
+            quotation_to     : 'Lead',
+            party_name       : leadName,
+            transaction_date : data.date,
+            currency         : currency,
+            items            : erpItems,
+            terms            : data.notes || ''
         };
 
         // Özel alanlar (daha önce ERPNext'e eklemiştik)
