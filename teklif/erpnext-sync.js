@@ -137,6 +137,7 @@ async function saveToERPNext(data) {
             party_name       : leadName,
             transaction_date : data.date,
             currency         : currency,
+            conversion_rate  : 1.0, // Döviz kuru hatasını atlamak için varsayılan değer
             items            : erpItems,
             terms            : data.notes || ''
         };
